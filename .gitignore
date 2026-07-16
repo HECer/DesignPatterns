@@ -1,0 +1,10 @@
+# Echte Impressums-/Kontaktdaten – NIE ins Repository!
+personal.config.mjs
+node_modules/
+shot*.png
+*.zip
+og.mjs
+shot_*.mjs
+# dist/ enthält die Live-Version mit echten Daten – nicht veröffentlichen
+dist/
+# dist-github/ ist die öffentliche Variante und DARF ins Repo

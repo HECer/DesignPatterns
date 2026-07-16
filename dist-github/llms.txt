@@ -1,0 +1,85 @@
+# Design Patterns Interactive – C# & Python
+
+> Free, interactive learning tool covering all 23 Gang-of-Four design patterns plus 21 modern patterns (concurrency, enterprise/architecture, cloud resilience). Every pattern with intent, real-world analogy, when-to-use criteria, pros/cons and complete code examples in BOTH C# and Python. Bilingual English/German. 44 patterns, 88 code examples, 5 live demos. No sign-up, no cost, no trackers.
+
+URL: https://apps.totalcreations.de/DesignPatterns/
+Full content for LLMs: https://apps.totalcreations.de/DesignPatterns/llms-full.txt
+
+## Categories and patterns
+
+### Creational Patterns / Erzeugungsmuster (Gang of Four)
+- [Singleton](https://apps.totalcreations.de/DesignPatterns/#singleton): Ensures a class has exactly one instance – with a global access point.
+- [Factory Method](https://apps.totalcreations.de/DesignPatterns/#factory-method): Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+- [Abstract Factory](https://apps.totalcreations.de/DesignPatterns/#abstract-factory): Creates entire families of related objects without naming their concrete classes.
+- [Builder](https://apps.totalcreations.de/DesignPatterns/#builder): Builds complex objects step by step – same construction steps, different representations.
+- [Prototype](https://apps.totalcreations.de/DesignPatterns/#prototype): Creates new objects by cloning existing instances – instead of expensive re-construction.
+- [Object Pool](https://apps.totalcreations.de/DesignPatterns/#object-pool): Keeps expensive objects in a pool and lends them out instead of constantly creating new ones.
+- [Lazy Initialization](https://apps.totalcreations.de/DesignPatterns/#lazy-initialization): Creates an object or value only when it is actually needed for the first time.
+- [Multiton](https://apps.totalcreations.de/DesignPatterns/#multiton): Like Singleton – but with exactly one instance per key (e.g. per tenant or region).
+- [Dependency Injection](https://apps.totalcreations.de/DesignPatterns/#dependency-injection): Objects receive their dependencies from outside instead of creating them themselves.
+
+### Structural Patterns / Strukturmuster (Gang of Four)
+- [Adapter](https://apps.totalcreations.de/DesignPatterns/#adapter): Translates an existing interface into the one the client expects.
+- [Bridge](https://apps.totalcreations.de/DesignPatterns/#bridge): Separates abstraction and implementation so both can vary independently.
+- [Composite](https://apps.totalcreations.de/DesignPatterns/#composite): Treats individual objects and object groups (trees) completely uniformly.
+- [Decorator](https://apps.totalcreations.de/DesignPatterns/#decorator): Adds new capabilities to objects at runtime – by wrapping instead of inheriting.
+- [Facade](https://apps.totalcreations.de/DesignPatterns/#facade): Provides a simple interface to a complex subsystem.
+- [Flyweight](https://apps.totalcreations.de/DesignPatterns/#flyweight): Shares common state between thousands of objects to save massive amounts of memory.
+- [Proxy](https://apps.totalcreations.de/DesignPatterns/#proxy): A surrogate controls access to the real object – for caching, protection or lazy loading.
+
+### Behavioral Patterns / Verhaltensmuster (Gang of Four)
+- [Chain of Responsibility](https://apps.totalcreations.de/DesignPatterns/#chain-of-responsibility): Passes a request along a chain of handlers until one processes it.
+- [Command](https://apps.totalcreations.de/DesignPatterns/#command): Wraps an action as an object – so it can be stored, delayed and undone.
+- [Interpreter](https://apps.totalcreations.de/DesignPatterns/#interpreter): Defines a grammar for a small language and evaluates sentences of that language.
+- [Iterator](https://apps.totalcreations.de/DesignPatterns/#iterator): Traverses a collection element by element without exposing its internal structure.
+- [Mediator](https://apps.totalcreations.de/DesignPatterns/#mediator): A mediator centralizes communication of many objects – instead of everyone talking to everyone.
+- [Memento](https://apps.totalcreations.de/DesignPatterns/#memento): Stores snapshots of object state – for undo, without exposing internals.
+- [Observer](https://apps.totalcreations.de/DesignPatterns/#observer): Objects subscribe to events and are notified automatically when something changes.
+- [State](https://apps.totalcreations.de/DesignPatterns/#state): An object changes its behavior when its internal state changes – without if cascades.
+- [Strategy](https://apps.totalcreations.de/DesignPatterns/#strategy): Encapsulates interchangeable algorithms behind an interface – selectable at runtime.
+- [Template Method](https://apps.totalcreations.de/DesignPatterns/#template-method): Defines the skeleton of an algorithm – subclasses fill in individual steps.
+- [Visitor](https://apps.totalcreations.de/DesignPatterns/#visitor): Adds new operations to an object structure without changing its classes.
+- [Null Object](https://apps.totalcreations.de/DesignPatterns/#null-object): Replaces null with a neutral object with "do nothing" behavior – no more null checks.
+- [Specification](https://apps.totalcreations.de/DesignPatterns/#specification): Wraps business rules as combinable objects: rule1.And(rule2).Or(rule3).
+
+### Concurrency Patterns / Nebenläufigkeit
+- [Producer-Consumer](https://apps.totalcreations.de/DesignPatterns/#producer-consumer): Decouples producers and processors via a thread-safe queue.
+- [Thread Pool](https://apps.totalcreations.de/DesignPatterns/#thread-pool): Reuses a fixed group of threads for many small tasks.
+- [Future / Promise](https://apps.totalcreations.de/DesignPatterns/#future-promise): A placeholder for a result that will only be ready in the future.
+- [Read-Write Lock](https://apps.totalcreations.de/DesignPatterns/#read-write-lock): Many may read simultaneously – but only one may write exclusively.
+- [Double-Checked Locking](https://apps.totalcreations.de/DesignPatterns/#double-checked-locking): Checks a condition twice – before and after the lock – to avoid expensive locking.
+
+### Architectural & Enterprise / Architektur & Enterprise
+- [MVC (Model-View-Controller)](https://apps.totalcreations.de/DesignPatterns/#mvc): Separates data (model), presentation (view) and control (controller) into three roles.
+- [MVVM (Model-View-ViewModel)](https://apps.totalcreations.de/DesignPatterns/#mvvm): The view binds to a view model via data binding – ideal for modern UI frameworks.
+- [Repository](https://apps.totalcreations.de/DesignPatterns/#repository): Encapsulates data access behind a collection-like interface.
+- [Unit of Work](https://apps.totalcreations.de/DesignPatterns/#unit-of-work): Collects all changes of a business action and writes them in one transaction.
+- [Publish-Subscribe](https://apps.totalcreations.de/DesignPatterns/#publish-subscribe): Senders publish messages to topics – receivers subscribe to topics. They never know each other.
+- [CQRS](https://apps.totalcreations.de/DesignPatterns/#cqrs): Strictly separates write operations (commands) from read operations (queries).
+- [Event Sourcing](https://apps.totalcreations.de/DesignPatterns/#event-sourcing): Stores not the current state but all events that led to it.
+
+### Resilience & Cloud / Resilienz & Cloud
+- [Retry (mit Backoff)](https://apps.totalcreations.de/DesignPatterns/#retry): Automatically repeats failed calls – with growing wait times.
+- [Circuit Breaker](https://apps.totalcreations.de/DesignPatterns/#circuit-breaker): A fuse for service calls: after too many failures, the circuit opens.
+- [Saga](https://apps.totalcreations.de/DesignPatterns/#saga): Distributed transactions as a chain of local steps – with compensation instead of rollback.
+
+## FAQ
+
+**What is a design pattern?**
+A design pattern is a proven, reusable solution template for a recurring problem in software design. Patterns are not ready-made code but a concept you adapt to your own situation – shown here with concrete examples in C# and Python.
+
+**How many design patterns are in the Gang of Four book?**
+The book "Design Patterns: Elements of Reusable Object-Oriented Software" (1994) by Gamma, Helm, Johnson and Vlissides describes exactly 23 patterns in three categories: 5 creational, 7 structural and 11 behavioral patterns. This site covers all 23 – plus 21 modern patterns beyond the GoF.
+
+**What categories of design patterns exist?**
+Classic: creational patterns (object creation, e.g. Singleton, Factory, Builder), structural patterns (object composition, e.g. Adapter, Decorator, Facade) and behavioral patterns (communication, e.g. Observer, Strategy, Command). Modern additions: concurrency patterns (Producer-Consumer, Thread Pool), architectural/enterprise patterns (MVC, Repository, CQRS) and resilience/cloud patterns (Circuit Breaker, Retry, Saga).
+
+**What is the difference between Strategy and State?**
+Both encapsulate behavior in interchangeable classes with the same structure. The difference is intent: with Strategy the client actively picks the algorithm (e.g. shipping method) and the strategies do not know each other. With State the object changes its own behavior when its internal state changes (e.g. order status), and states often define their mutual transitions.
+
+**Do design patterns differ between Python and C#?**
+The concepts are identical, the implementation differs: C# uses interfaces, events and language features like Lazy<T> or IEnumerable; Python solves much of it more lightweightly via duck typing, first-class functions, decorators, generators and modules. Some GoF patterns (e.g. Iterator, Strategy) are practically built into Python. That is exactly why this site shows every pattern in both languages side by side.
+
+**Is this learning tool free?**
+Yes. All 44 patterns, 88 code examples and the interactive live demos are completely free and usable without sign-up. The code examples may be freely used for learning purposes.
+

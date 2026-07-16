@@ -1,0 +1,3610 @@
+# Design Patterns Interactive – C# & Python
+
+> Free, interactive learning tool covering all 23 Gang-of-Four design patterns plus 21 modern patterns (concurrency, enterprise/architecture, cloud resilience). Every pattern with intent, real-world analogy, when-to-use criteria, pros/cons and complete code examples in BOTH C# and Python. Bilingual English/German. 44 patterns, 88 code examples, 5 live demos. No sign-up, no cost, no trackers.
+
+URL: https://apps.totalcreations.de/DesignPatterns/
+Full content for LLMs: https://apps.totalcreations.de/DesignPatterns/llms-full.txt
+
+## Categories and patterns
+
+### Creational Patterns / Erzeugungsmuster (Gang of Four)
+- [Singleton](https://apps.totalcreations.de/DesignPatterns/#singleton): Ensures a class has exactly one instance – with a global access point.
+- [Factory Method](https://apps.totalcreations.de/DesignPatterns/#factory-method): Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+- [Abstract Factory](https://apps.totalcreations.de/DesignPatterns/#abstract-factory): Creates entire families of related objects without naming their concrete classes.
+- [Builder](https://apps.totalcreations.de/DesignPatterns/#builder): Builds complex objects step by step – same construction steps, different representations.
+- [Prototype](https://apps.totalcreations.de/DesignPatterns/#prototype): Creates new objects by cloning existing instances – instead of expensive re-construction.
+- [Object Pool](https://apps.totalcreations.de/DesignPatterns/#object-pool): Keeps expensive objects in a pool and lends them out instead of constantly creating new ones.
+- [Lazy Initialization](https://apps.totalcreations.de/DesignPatterns/#lazy-initialization): Creates an object or value only when it is actually needed for the first time.
+- [Multiton](https://apps.totalcreations.de/DesignPatterns/#multiton): Like Singleton – but with exactly one instance per key (e.g. per tenant or region).
+- [Dependency Injection](https://apps.totalcreations.de/DesignPatterns/#dependency-injection): Objects receive their dependencies from outside instead of creating them themselves.
+
+### Structural Patterns / Strukturmuster (Gang of Four)
+- [Adapter](https://apps.totalcreations.de/DesignPatterns/#adapter): Translates an existing interface into the one the client expects.
+- [Bridge](https://apps.totalcreations.de/DesignPatterns/#bridge): Separates abstraction and implementation so both can vary independently.
+- [Composite](https://apps.totalcreations.de/DesignPatterns/#composite): Treats individual objects and object groups (trees) completely uniformly.
+- [Decorator](https://apps.totalcreations.de/DesignPatterns/#decorator): Adds new capabilities to objects at runtime – by wrapping instead of inheriting.
+- [Facade](https://apps.totalcreations.de/DesignPatterns/#facade): Provides a simple interface to a complex subsystem.
+- [Flyweight](https://apps.totalcreations.de/DesignPatterns/#flyweight): Shares common state between thousands of objects to save massive amounts of memory.
+- [Proxy](https://apps.totalcreations.de/DesignPatterns/#proxy): A surrogate controls access to the real object – for caching, protection or lazy loading.
+
+### Behavioral Patterns / Verhaltensmuster (Gang of Four)
+- [Chain of Responsibility](https://apps.totalcreations.de/DesignPatterns/#chain-of-responsibility): Passes a request along a chain of handlers until one processes it.
+- [Command](https://apps.totalcreations.de/DesignPatterns/#command): Wraps an action as an object – so it can be stored, delayed and undone.
+- [Interpreter](https://apps.totalcreations.de/DesignPatterns/#interpreter): Defines a grammar for a small language and evaluates sentences of that language.
+- [Iterator](https://apps.totalcreations.de/DesignPatterns/#iterator): Traverses a collection element by element without exposing its internal structure.
+- [Mediator](https://apps.totalcreations.de/DesignPatterns/#mediator): A mediator centralizes communication of many objects – instead of everyone talking to everyone.
+- [Memento](https://apps.totalcreations.de/DesignPatterns/#memento): Stores snapshots of object state – for undo, without exposing internals.
+- [Observer](https://apps.totalcreations.de/DesignPatterns/#observer): Objects subscribe to events and are notified automatically when something changes.
+- [State](https://apps.totalcreations.de/DesignPatterns/#state): An object changes its behavior when its internal state changes – without if cascades.
+- [Strategy](https://apps.totalcreations.de/DesignPatterns/#strategy): Encapsulates interchangeable algorithms behind an interface – selectable at runtime.
+- [Template Method](https://apps.totalcreations.de/DesignPatterns/#template-method): Defines the skeleton of an algorithm – subclasses fill in individual steps.
+- [Visitor](https://apps.totalcreations.de/DesignPatterns/#visitor): Adds new operations to an object structure without changing its classes.
+- [Null Object](https://apps.totalcreations.de/DesignPatterns/#null-object): Replaces null with a neutral object with "do nothing" behavior – no more null checks.
+- [Specification](https://apps.totalcreations.de/DesignPatterns/#specification): Wraps business rules as combinable objects: rule1.And(rule2).Or(rule3).
+
+### Concurrency Patterns / Nebenläufigkeit
+- [Producer-Consumer](https://apps.totalcreations.de/DesignPatterns/#producer-consumer): Decouples producers and processors via a thread-safe queue.
+- [Thread Pool](https://apps.totalcreations.de/DesignPatterns/#thread-pool): Reuses a fixed group of threads for many small tasks.
+- [Future / Promise](https://apps.totalcreations.de/DesignPatterns/#future-promise): A placeholder for a result that will only be ready in the future.
+- [Read-Write Lock](https://apps.totalcreations.de/DesignPatterns/#read-write-lock): Many may read simultaneously – but only one may write exclusively.
+- [Double-Checked Locking](https://apps.totalcreations.de/DesignPatterns/#double-checked-locking): Checks a condition twice – before and after the lock – to avoid expensive locking.
+
+### Architectural & Enterprise / Architektur & Enterprise
+- [MVC (Model-View-Controller)](https://apps.totalcreations.de/DesignPatterns/#mvc): Separates data (model), presentation (view) and control (controller) into three roles.
+- [MVVM (Model-View-ViewModel)](https://apps.totalcreations.de/DesignPatterns/#mvvm): The view binds to a view model via data binding – ideal for modern UI frameworks.
+- [Repository](https://apps.totalcreations.de/DesignPatterns/#repository): Encapsulates data access behind a collection-like interface.
+- [Unit of Work](https://apps.totalcreations.de/DesignPatterns/#unit-of-work): Collects all changes of a business action and writes them in one transaction.
+- [Publish-Subscribe](https://apps.totalcreations.de/DesignPatterns/#publish-subscribe): Senders publish messages to topics – receivers subscribe to topics. They never know each other.
+- [CQRS](https://apps.totalcreations.de/DesignPatterns/#cqrs): Strictly separates write operations (commands) from read operations (queries).
+- [Event Sourcing](https://apps.totalcreations.de/DesignPatterns/#event-sourcing): Stores not the current state but all events that led to it.
+
+### Resilience & Cloud / Resilienz & Cloud
+- [Retry (mit Backoff)](https://apps.totalcreations.de/DesignPatterns/#retry): Automatically repeats failed calls – with growing wait times.
+- [Circuit Breaker](https://apps.totalcreations.de/DesignPatterns/#circuit-breaker): A fuse for service calls: after too many failures, the circuit opens.
+- [Saga](https://apps.totalcreations.de/DesignPatterns/#saga): Distributed transactions as a chain of local steps – with compensation instead of rollback.
+
+## FAQ
+
+**What is a design pattern?**
+A design pattern is a proven, reusable solution template for a recurring problem in software design. Patterns are not ready-made code but a concept you adapt to your own situation – shown here with concrete examples in C# and Python.
+
+**How many design patterns are in the Gang of Four book?**
+The book "Design Patterns: Elements of Reusable Object-Oriented Software" (1994) by Gamma, Helm, Johnson and Vlissides describes exactly 23 patterns in three categories: 5 creational, 7 structural and 11 behavioral patterns. This site covers all 23 – plus 21 modern patterns beyond the GoF.
+
+**What categories of design patterns exist?**
+Classic: creational patterns (object creation, e.g. Singleton, Factory, Builder), structural patterns (object composition, e.g. Adapter, Decorator, Facade) and behavioral patterns (communication, e.g. Observer, Strategy, Command). Modern additions: concurrency patterns (Producer-Consumer, Thread Pool), architectural/enterprise patterns (MVC, Repository, CQRS) and resilience/cloud patterns (Circuit Breaker, Retry, Saga).
+
+**What is the difference between Strategy and State?**
+Both encapsulate behavior in interchangeable classes with the same structure. The difference is intent: with Strategy the client actively picks the algorithm (e.g. shipping method) and the strategies do not know each other. With State the object changes its own behavior when its internal state changes (e.g. order status), and states often define their mutual transitions.
+
+**Do design patterns differ between Python and C#?**
+The concepts are identical, the implementation differs: C# uses interfaces, events and language features like Lazy<T> or IEnumerable; Python solves much of it more lightweightly via duck typing, first-class functions, decorators, generators and modules. Some GoF patterns (e.g. Iterator, Strategy) are practically built into Python. That is exactly why this site shows every pattern in both languages side by side.
+
+**Is this learning tool free?**
+Yes. All 44 patterns, 88 code examples and the interactive live demos are completely free and usable without sign-up. The code examples may be freely used for learning purposes.
+
+
+---
+
+# Full pattern reference
+
+
+## Creational Patterns / Erzeugungsmuster
+
+How are objects created? These patterns decouple code from concrete classes and make object creation flexible, controllable and reusable.
+
+### Singleton (GoF)
+
+**Intent:** The Singleton guarantees a class is instantiated only once and provides a central access point to that instance. Typical for configuration, loggers or connection pools. Note: modern architectures often prefer dependency injection with a "singleton lifetime", since the classic Singleton makes testing harder.
+
+**Analogy:** A government: no matter who governs – there is always exactly one official government per country, and everyone knows how to reach it.
+
+**When to use:**
+- Exactly one instance needed (logger, configuration, cache)
+- Controlled global access to a resource
+- Lazy creation of expensive objects on first access
+
+**Pros:** Guarantees a single instance; Lazy initialization possible; Saves resources for expensive objects
+
+**Cons:** Hidden global state → hard to test; Violates the single responsibility principle; Threading must be handled explicitly
+
+**C# example:**
+```csharp
+// Thread-sicheres Singleton mit Lazy<T> (empfohlener Weg in C#)
+public sealed class AppConfig
+{
+    private static readonly Lazy<AppConfig> _instance =
+        new(() => new AppConfig());
+
+    public static AppConfig Instance => _instance.Value;
+
+    public string ConnectionString { get; private set; }
+
+    private AppConfig()   // privater Konstruktor!
+    {
+        ConnectionString = "Server=localhost;Db=Shop";
+        Console.WriteLine("Konfiguration geladen.");
+    }
+}
+
+// Verwendung:
+var cfg = AppConfig.Instance;
+Console.WriteLine(cfg.ConnectionString);
+// AppConfig.Instance == cfg  → immer dieselbe Instanz
+```
+
+**Python example:**
+```python
+# Pythonisch: Singleton über Modul-Ebene oder __new__
+class AppConfig:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.connection_string = "Server=localhost;Db=Shop"
+            print("Konfiguration geladen.")
+        return cls._instance
+
+cfg1 = AppConfig()
+cfg2 = AppConfig()
+print(cfg1 is cfg2)          # True – dieselbe Instanz
+print(cfg1.connection_string)
+
+# Alternative (idiomatisch): einfach ein Modul verwenden –
+# Module werden in Python nur einmal importiert.
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#singleton
+
+### Factory Method (GoF)
+
+**Intent:** Instead of creating objects directly with new, the factory method delegates creation to an overridable method. Calling code only works with the abstract interface – new product types can be added without changing existing code (open-closed principle).
+
+**Analogy:** A logistics HQ plans deliveries without knowing whether a truck or a ship is used – the local branch (subclass) decides on the vehicle.
+
+**When to use:**
+- The concrete type is only known at runtime
+- Libraries/frameworks offering extension points
+- Encapsulating reuse of objects instead of rebuilding
+
+**Pros:** Decouples creators and products; Open-closed: new products without changes; Single responsibility for creation
+
+**Cons:** More classes in the project; Overkill for simple cases; Parallel class hierarchies may emerge
+
+**C# example:**
+```csharp
+public interface INotification { void Send(string msg); }
+
+public class EmailNotification : INotification
+{
+    public void Send(string msg) => Console.WriteLine($"E-Mail: {msg}");
+}
+public class SmsNotification : INotification
+{
+    public void Send(string msg) => Console.WriteLine($"SMS: {msg}");
+}
+
+// Creator mit Factory Method
+public abstract class NotificationService
+{
+    protected abstract INotification Create();   // Factory Method
+
+    public void Notify(string msg)
+    {
+        INotification n = Create();   // Unterklasse entscheidet
+        n.Send(msg);
+    }
+}
+public class EmailService : NotificationService
+{
+    protected override INotification Create() => new EmailNotification();
+}
+
+new EmailService().Notify("Bestellung versandt!");
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Notification(ABC):
+    @abstractmethod
+    def send(self, msg: str): ...
+
+class EmailNotification(Notification):
+    def send(self, msg): print(f"E-Mail: {msg}")
+
+class SmsNotification(Notification):
+    def send(self, msg): print(f"SMS: {msg}")
+
+class NotificationService(ABC):
+    @abstractmethod
+    def create(self) -> Notification: ...   # Factory Method
+
+    def notify(self, msg: str):
+        self.create().send(msg)   # Unterklasse entscheidet
+
+class EmailService(NotificationService):
+    def create(self): return EmailNotification()
+
+EmailService().notify("Bestellung versandt!")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#factory-method
+
+### Abstract Factory (GoF)
+
+**Intent:** An abstract factory bundles multiple factory methods: it delivers families of products that must match each other (e.g. button + checkbox in the same UI style). The client only knows the abstract factory and abstract products – the concrete "theme" is chosen once, centrally.
+
+**Analogy:** A furniture store with style collections: order "Scandinavian" and sofa, table and chair are guaranteed to match – no combining individual pieces.
+
+**When to use:**
+- Product families must be combined consistently
+- Platform/theme dependent creation (Windows/Mac, light/dark)
+- Swapping entire product lines at runtime
+
+**Pros:** Guarantees compatible products; Concrete classes stay isolated; Product family swappable centrally
+
+**Cons:** Many interfaces and classes; New product kinds require changing all factories; Higher entry complexity
+
+**C# example:**
+```csharp
+// Produktfamilie: UI-Elemente in zwei Themes
+public interface IButton   { void Render(); }
+public interface ICheckbox { void Render(); }
+
+public class DarkButton : IButton
+{ public void Render() => Console.WriteLine("[Dunkler Button]"); }
+public class DarkCheckbox : ICheckbox
+{ public void Render() => Console.WriteLine("[Dunkle Checkbox]"); }
+public class LightButton : IButton
+{ public void Render() => Console.WriteLine("[Heller Button]"); }
+public class LightCheckbox : ICheckbox
+{ public void Render() => Console.WriteLine("[Helle Checkbox]"); }
+
+public interface IUiFactory
+{
+    IButton CreateButton();
+    ICheckbox CreateCheckbox();
+}
+public class DarkThemeFactory : IUiFactory
+{
+    public IButton CreateButton() => new DarkButton();
+    public ICheckbox CreateCheckbox() => new DarkCheckbox();
+}
+
+// Client kennt nur die Interfaces:
+IUiFactory factory = new DarkThemeFactory();
+factory.CreateButton().Render();
+factory.CreateCheckbox().Render();
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Button(ABC):
+    @abstractmethod
+    def render(self): ...
+
+class Checkbox(ABC):
+    @abstractmethod
+    def render(self): ...
+
+class DarkButton(Button):
+    def render(self): print("[Dunkler Button]")
+class DarkCheckbox(Checkbox):
+    def render(self): print("[Dunkle Checkbox]")
+
+class UiFactory(ABC):
+    @abstractmethod
+    def create_button(self) -> Button: ...
+    @abstractmethod
+    def create_checkbox(self) -> Checkbox: ...
+
+class DarkThemeFactory(UiFactory):
+    def create_button(self): return DarkButton()
+    def create_checkbox(self): return DarkCheckbox()
+
+factory: UiFactory = DarkThemeFactory()
+factory.create_button().render()
+factory.create_checkbox().render()
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#abstract-factory
+
+### Builder (GoF)
+
+**Intent:** The builder separates constructing a complex object from its representation. Instead of a constructor with ten parameters ("telescoping constructor") there are expressive build steps that can be called in any combination. In C# the fluent variant with method chaining is common; Python often uses keyword arguments or fluent builders too.
+
+**Analogy:** A burger restaurant: the customer specifies step by step what goes on the burger. At the end "build()" delivers the finished burger – nobody has to recite all ingredients in one order.
+
+**When to use:**
+- Objects with many optional parameters
+- Cleanly creating immutable objects
+- Same build process, different results (director)
+
+**Pros:** More readable than giant constructors; Step-by-step construction, reusable steps; Great for immutable objects
+
+**Cons:** Extra builder class per product; More code for simple objects; Object may be incomplete if build() is forgotten
+
+**C# example:**
+```csharp
+public record Pizza(string Size, bool Cheese, bool Salami, bool Veggies);
+
+public class PizzaBuilder
+{
+    private string _size = "M";
+    private bool _cheese, _salami, _veggies;
+
+    public PizzaBuilder Size(string s)  { _size = s;      return this; }
+    public PizzaBuilder AddCheese()     { _cheese = true;  return this; }
+    public PizzaBuilder AddSalami()     { _salami = true;  return this; }
+    public PizzaBuilder AddVeggies()    { _veggies = true; return this; }
+
+    public Pizza Build() => new(_size, _cheese, _salami, _veggies);
+}
+
+// Fluent API – liest sich fast wie ein Satz:
+Pizza pizza = new PizzaBuilder()
+    .Size("XL")
+    .AddCheese()
+    .AddSalami()
+    .Build();
+
+Console.WriteLine(pizza);   // Pizza { Size = XL, Cheese = True, ... }
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)          # immutable Produkt
+class Pizza:
+    size: str
+    cheese: bool = False
+    salami: bool = False
+    veggies: bool = False
+
+class PizzaBuilder:
+    def __init__(self):
+        self._size, self._cheese = "M", False
+        self._salami, self._veggies = False, False
+
+    def size(self, s):      self._size = s;        return self
+    def add_cheese(self):   self._cheese = True;   return self
+    def add_salami(self):   self._salami = True;   return self
+    def add_veggies(self):  self._veggies = True;  return self
+
+    def build(self) -> Pizza:
+        return Pizza(self._size, self._cheese,
+                     self._salami, self._veggies)
+
+pizza = PizzaBuilder().size("XL").add_cheese().add_salami().build()
+print(pizza)
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#builder
+
+### Prototype (GoF)
+
+**Intent:** The prototype pattern copies existing objects without coupling code to their classes. Useful when initialization is expensive (DB queries, computations) or when runtime-configured objects serve as templates. Important: shallow vs. deep clone – nested objects usually need a deep copy.
+
+**Analogy:** Cell division: a cell creates a copy of itself – nobody assembles the new cell from scratch.
+
+**When to use:**
+- Creating is more expensive than copying
+- Many similar objects with small variations
+- Duplicating configured templates at runtime
+
+**Pros:** Cloning without coupling to concrete classes; Saves expensive initialization; Templates instead of many subclasses
+
+**Cons:** Deep copy is tricky with cycles/nesting; Clone logic must be maintained; Hidden dependencies may survive in the clone
+
+**C# example:**
+```csharp
+public class Document
+{
+    public string Title { get; set; } = "";
+    public List<string> Tags { get; set; } = new();
+
+    // Deep Clone – Liste wird mitkopiert!
+    public Document Clone() => new()
+    {
+        Title = Title,
+        Tags  = new List<string>(Tags)
+    };
+}
+
+var template = new Document
+{
+    Title = "Rechnungsvorlage",
+    Tags  = { "intern", "finanzen" }
+};
+
+var invoice = template.Clone();
+invoice.Title = "Rechnung #2026-101";
+invoice.Tags.Add("kunde-42");
+
+Console.WriteLine(template.Tags.Count);  // 2 – Vorlage unberührt
+Console.WriteLine(invoice.Tags.Count);   // 3
+```
+
+**Python example:**
+```python
+import copy
+
+class Document:
+    def __init__(self, title, tags=None):
+        self.title = title
+        self.tags = tags or []
+
+    def clone(self):
+        return copy.deepcopy(self)   # tiefer Klon
+
+template = Document("Rechnungsvorlage", ["intern", "finanzen"])
+
+invoice = template.clone()
+invoice.title = "Rechnung #2026-101"
+invoice.tags.append("kunde-42")
+
+print(len(template.tags))   # 2 – Vorlage unberührt
+print(len(invoice.tags))    # 3
+
+# copy.copy(x)      → flacher Klon (Referenzen geteilt!)
+# copy.deepcopy(x)  → tiefer Klon (alles kopiert)
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#prototype
+
+### Object Pool (Beyond GoF)
+
+**Intent:** When objects are expensive to create (DB connections, threads, large buffers), an object pool manages reusable instances: borrow → use → return. Virtually every database library uses connection pooling internally. Resetting state on return is essential.
+
+**Analogy:** A library: books are borrowed and returned – nobody prints a new copy for every reader.
+
+**When to use:**
+- Expensive creation: connections, threads, buffers
+- High frequency of acquire/release
+- Limiting concurrent resources (max N connections)
+
+**Pros:** Far fewer allocations/GC pressure; Predictable resource ceiling; Lower latency on hot paths
+
+**Cons:** Easy to forget state reset → bugs; Extra complexity (thread safety); Counterproductive for cheap objects
+
+**C# example:**
+```csharp
+using System.Collections.Concurrent;
+
+public class Connection
+{
+    public int Id { get; }
+    public Connection(int id) { Id = id; Thread.Sleep(100); } // teuer!
+}
+
+public class ConnectionPool
+{
+    private readonly ConcurrentBag<Connection> _pool = new();
+    private int _created;
+
+    public Connection Rent() =>
+        _pool.TryTake(out var c)
+            ? c
+            : new Connection(Interlocked.Increment(ref _created));
+
+    public void Return(Connection c) => _pool.Add(c);
+}
+
+var pool = new ConnectionPool();
+var conn = pool.Rent();          // beim 1. Mal: neu (langsam)
+Console.WriteLine($"Nutze Verbindung {conn.Id}");
+pool.Return(conn);               // zurück in den Pool
+var again = pool.Rent();         // sofort – recycelt!
+// .NET bietet fertig: Microsoft.Extensions.ObjectPool
+```
+
+**Python example:**
+```python
+import queue, time
+
+class Connection:
+    _counter = 0
+    def __init__(self):
+        Connection._counter += 1
+        self.id = Connection._counter
+        time.sleep(0.1)            # teure Erzeugung simulieren
+
+class ConnectionPool:
+    def __init__(self, size=2):
+        self._pool = queue.Queue()
+        for _ in range(size):      # Pool vorbefüllen
+            self._pool.put(Connection())
+
+    def rent(self) -> Connection:
+        return self._pool.get()    # blockiert, wenn leer
+
+    def give_back(self, conn):
+        self._pool.put(conn)
+
+pool = ConnectionPool(size=2)
+conn = pool.rent()
+print(f"Nutze Verbindung {conn.id}")
+pool.give_back(conn)               # recyceln statt wegwerfen
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#object-pool
+
+### Lazy Initialization (Beyond GoF)
+
+**Intent:** Lazy initialization defers expensive work (object creation, computation, data loading) to the moment of first access. This speeds up program start and saves resources for things that may never be needed. C# ships Lazy<T> for this; Python solves it elegantly with @cached_property.
+
+**Analogy:** A restaurant cooks a dish only when ordered – not every menu item in the morning just in case.
+
+**When to use:**
+- Expensive objects not always needed
+- Faster application startup
+- Defusing cyclic dependencies
+
+**Pros:** Resources only on demand; Easy with built-in tools; Combinable with Singleton/Proxy
+
+**Cons:** First access is slower (latency spike); Mind thread safety; Errors surface late
+
+**C# example:**
+```csharp
+public class ReportService
+{
+    // Wird erst beim ersten Zugriff auf .Value erzeugt –
+    // Lazy<T> ist standardmäßig thread-sicher.
+    private readonly Lazy<byte[]> _bigTemplate =
+        new(() =>
+        {
+            Console.WriteLine("Lade 50-MB-Vorlage ...");
+            return File.ReadAllBytes("template.bin");
+        });
+
+    public void PrintReport()
+    {
+        var data = _bigTemplate.Value;   // hier passiert das Laden
+        Console.WriteLine($"Report mit {data.Length} Bytes erstellt");
+    }
+}
+
+var svc = new ReportService();
+Console.WriteLine("Service erstellt – noch nichts geladen.");
+svc.PrintReport();   // erst jetzt wird geladen
+svc.PrintReport();   // gecached – kein zweites Laden
+```
+
+**Python example:**
+```python
+from functools import cached_property
+
+class ReportService:
+    @cached_property           # berechnet einmal, dann gecached
+    def big_template(self) -> bytes:
+        print("Lade 50-MB-Vorlage ...")
+        with open("template.bin", "rb") as f:
+            return f.read()
+
+    def print_report(self):
+        data = self.big_template     # 1. Zugriff lädt, danach Cache
+        print(f"Report mit {len(data)} Bytes erstellt")
+
+svc = ReportService()
+print("Service erstellt – noch nichts geladen.")
+svc.print_report()   # erst jetzt wird geladen
+svc.print_report()   # gecached – kein zweites Laden
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#lazy-initialization
+
+### Multiton (Beyond GoF)
+
+**Intent:** The multiton manages a map of named instances: at most one object exists per key, created on demand and reused afterwards. Typical cases: one logger per category, one connection per database, one configuration per tenant.
+
+**Analogy:** Lockers at a train station: exactly one locker per key number – but there are many lockers.
+
+**When to use:**
+- One instance per context (tenant, region, category)
+- Central registry of expensive objects
+- Logger frameworks (GetLogger("name"))
+
+**Pros:** Controlled instances per key; Lazy creation included; Central overview of all instances
+
+**Cons:** Global state like Singleton; Memory grows with key count; Thread safety required
+
+**C# example:**
+```csharp
+using System.Collections.Concurrent;
+
+public sealed class TenantConfig
+{
+    private static readonly
+        ConcurrentDictionary<string, TenantConfig> _instances = new();
+
+    public string Tenant { get; }
+    private TenantConfig(string tenant)
+    {
+        Tenant = tenant;
+        Console.WriteLine($"Config für '{tenant}' geladen");
+    }
+
+    public static TenantConfig For(string tenant) =>
+        _instances.GetOrAdd(tenant, t => new TenantConfig(t));
+}
+
+var a1 = TenantConfig.For("acme");     // erzeugt
+var a2 = TenantConfig.For("acme");     // wiederverwendet
+var b  = TenantConfig.For("globex");   // erzeugt
+Console.WriteLine(ReferenceEquals(a1, a2));   // True
+```
+
+**Python example:**
+```python
+class TenantConfig:
+    _instances: dict[str, "TenantConfig"] = {}
+
+    def __init__(self, tenant: str):
+        self.tenant = tenant
+        print(f"Config für '{tenant}' geladen")
+
+    @classmethod
+    def for_tenant(cls, tenant: str) -> "TenantConfig":
+        if tenant not in cls._instances:
+            cls._instances[tenant] = cls(tenant)
+        return cls._instances[tenant]
+
+a1 = TenantConfig.for_tenant("acme")     # erzeugt
+a2 = TenantConfig.for_tenant("acme")     # wiederverwendet
+b  = TenantConfig.for_tenant("globex")   # erzeugt
+print(a1 is a2)   # True
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#multiton
+
+### Dependency Injection (Beyond GoF)
+
+**Intent:** Dependency injection (DI) is the practical implementation of the inversion-of-control principle: a class declares what it needs (usually via constructor) and a caller or DI container supplies the concrete implementation. This makes code testable (mocks!), swappable and decoupled. ASP.NET Core has DI built in; in Python plain constructor passing often suffices.
+
+**Analogy:** A chef does not bring their own vegetables – the kitchen provides ingredients. The same recipe can thus be cooked with organic, regional or test ingredients.
+
+**When to use:**
+- Testability: replace real services with mocks
+- Swappable implementations (DB, mail, cache)
+- Central lifecycle management (singleton/scoped/transient)
+
+**Pros:** Loose coupling, high testability; Dependencies explicitly visible; Configuration in one place
+
+**Cons:** Indirection: where does the object come from?; Container magic can hinder debugging; Over-configuration in small projects
+
+**C# example:**
+```csharp
+public interface IMailer { void Send(string to, string text); }
+
+public class SmtpMailer : IMailer
+{
+    public void Send(string to, string text) =>
+        Console.WriteLine($"SMTP an {to}: {text}");
+}
+
+// Die Klasse ERZEUGT ihre Abhängigkeit nicht – sie BEKOMMT sie:
+public class OrderService(IMailer mailer)   // Primary Constructor
+{
+    public void PlaceOrder(string customer)
+    {
+        Console.WriteLine("Bestellung gespeichert.");
+        mailer.Send(customer, "Danke für deine Bestellung!");
+    }
+}
+
+// Komposition am Startpunkt (oder via ASP.NET-Container):
+// services.AddScoped<IMailer, SmtpMailer>();
+var service = new OrderService(new SmtpMailer());
+service.PlaceOrder("kunde@example.com");
+
+// Im Test: new OrderService(new FakeMailer()) – kein SMTP nötig!
+```
+
+**Python example:**
+```python
+from typing import Protocol
+
+class Mailer(Protocol):                 # strukturelles Interface
+    def send(self, to: str, text: str) -> None: ...
+
+class SmtpMailer:
+    def send(self, to, text):
+        print(f"SMTP an {to}: {text}")
+
+class FakeMailer:                       # für Tests
+    def __init__(self): self.sent = []
+    def send(self, to, text): self.sent.append((to, text))
+
+class OrderService:
+    def __init__(self, mailer: Mailer):   # Injektion!
+        self._mailer = mailer
+
+    def place_order(self, customer: str):
+        print("Bestellung gespeichert.")
+        self._mailer.send(customer, "Danke für deine Bestellung!")
+
+OrderService(SmtpMailer()).place_order("kunde@example.com")
+
+fake = FakeMailer()                     # Test ohne echtes SMTP:
+OrderService(fake).place_order("test@example.com")
+print(fake.sent)
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#dependency-injection
+
+
+## Structural Patterns / Strukturmuster
+
+How are classes and objects composed into larger structures? These patterns simplify relationships and create flexible, efficient architectures.
+
+### Adapter (GoF)
+
+**Intent:** The adapter (aka wrapper) lets classes work together whose interfaces are incompatible – without changing their code. Classic use: connecting third-party libraries, legacy systems or external APIs to your own domain model.
+
+**Analogy:** A travel plug adapter: your German plug does not fit a UK socket – the adapter translates the shape, electricity still flows.
+
+**When to use:**
+- Using third-party/legacy code with an incompatible interface
+- Adapting external APIs to your own interface
+- Unifying multiple data sources behind one interface
+
+**Pros:** Third-party code stays untouched; Single responsibility: translation isolated; Can be introduced retroactively
+
+**Cons:** Additional layer of indirection; Many adapters → cluttered; May hide design weaknesses
+
+**C# example:**
+```csharp
+// Vorhandene Fremdbibliothek (nicht änderbar):
+public class LegacyPaymentGateway
+{
+    public void MakeTransaction(double amountInCents)
+        => Console.WriteLine($"Legacy: {amountInCents} Cent überwiesen");
+}
+
+// Unser Ziel-Interface:
+public interface IPaymentProcessor
+{
+    void Pay(decimal euros);
+}
+
+// Der Adapter übersetzt Euro → Cent und Methodennamen:
+public class PaymentAdapter(LegacyPaymentGateway legacy)
+    : IPaymentProcessor
+{
+    public void Pay(decimal euros)
+        => legacy.MakeTransaction((double)(euros * 100));
+}
+
+IPaymentProcessor processor =
+    new PaymentAdapter(new LegacyPaymentGateway());
+processor.Pay(19.99m);   // Client nutzt NUR das eigene Interface
+```
+
+**Python example:**
+```python
+# Vorhandene Fremdbibliothek (nicht änderbar):
+class LegacyPaymentGateway:
+    def make_transaction(self, amount_in_cents: int):
+        print(f"Legacy: {amount_in_cents} Cent überwiesen")
+
+# Unser Ziel-Interface (Duck Typing genügt):
+class PaymentAdapter:
+    def __init__(self, legacy: LegacyPaymentGateway):
+        self._legacy = legacy
+
+    def pay(self, euros: float):        # unsere Wunsch-Methode
+        self._legacy.make_transaction(int(euros * 100))
+
+processor = PaymentAdapter(LegacyPaymentGateway())
+processor.pay(19.99)   # Client nutzt nur das eigene Interface
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#adapter
+
+### Bridge (GoF)
+
+**Intent:** Instead of an exploding class hierarchy (RoundRedWindow, RoundBlueWindow …), Bridge splits the problem into two dimensions: the abstraction (e.g. remote control) holds a reference to the implementation (e.g. device). Both hierarchies grow independently – m×n classes become m+n.
+
+**Analogy:** Remote control and device: every remote (basic, premium) can control every device (TV, radio) – nobody builds a "PremiumTVRemote" as its own class.
+
+**When to use:**
+- Two independently varying dimensions (shape × color, UI × platform)
+- Swapping implementation at runtime
+- Avoiding combinatorial class explosion
+
+**Pros:** m+n instead of m×n classes; Implementation switchable at runtime; Platform details hidden from client
+
+**Cons:** More initial complexity; Unnecessary with a single dimension; Design must be planned early
+
+**C# example:**
+```csharp
+// Implementierungs-Hierarchie:
+public interface IDevice
+{
+    void SetVolume(int percent);
+    string Name { get; }
+}
+public class Tv : IDevice
+{
+    public string Name => "TV";
+    public void SetVolume(int p) => Console.WriteLine($"TV: {p}%");
+}
+public class Radio : IDevice
+{
+    public string Name => "Radio";
+    public void SetVolume(int p) => Console.WriteLine($"Radio: {p}%");
+}
+
+// Abstraktions-Hierarchie – hält die Brücke zur Implementierung:
+public class Remote(IDevice device)
+{
+    protected readonly IDevice Device = device;
+    public void VolumeUp() => Device.SetVolume(50);
+}
+public class PremiumRemote(IDevice device) : Remote(device)
+{
+    public void Mute() => Device.SetVolume(0);   // Extra-Feature
+}
+
+new Remote(new Tv()).VolumeUp();          // TV: 50%
+new PremiumRemote(new Radio()).Mute();    // Radio: 0%
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Device(ABC):                       # Implementierung
+    @abstractmethod
+    def set_volume(self, percent: int): ...
+
+class Tv(Device):
+    def set_volume(self, p): print(f"TV: {p}%")
+
+class Radio(Device):
+    def set_volume(self, p): print(f"Radio: {p}%")
+
+class Remote:                            # Abstraktion
+    def __init__(self, device: Device):  # ← die "Brücke"
+        self._device = device
+    def volume_up(self):
+        self._device.set_volume(50)
+
+class PremiumRemote(Remote):             # erweiterte Abstraktion
+    def mute(self):
+        self._device.set_volume(0)
+
+Remote(Tv()).volume_up()          # TV: 50%
+PremiumRemote(Radio()).mute()     # Radio: 0%
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#bridge
+
+### Composite (GoF)
+
+**Intent:** Composite organizes objects into tree structures and lets you address leaves (individual elements) and containers (groups) through the same interface. The client need not know whether it works with a file or a whole folder – operations run recursively through the tree.
+
+**Analogy:** A moving box: it can contain individual items or more boxes. "How much does the box weigh?" answers itself recursively – no matter how deeply nested.
+
+**When to use:**
+- Hierarchies: file systems, menus, org charts, UI trees
+- Treating part-whole relationships uniformly
+- Recursive operations (sum, search, render)
+
+**Pros:** Client code ignores leaf/container difference; Arbitrarily deep nesting; New element types easy to add
+
+**Cons:** Interface may become too general; Type checks sometimes still needed; Cycles must be prevented
+
+**C# example:**
+```csharp
+public abstract class FileSystemItem(string name)
+{
+    public string Name { get; } = name;
+    public abstract long GetSize();
+}
+
+public class FileItem(string name, long size)
+    : FileSystemItem(name)
+{
+    public override long GetSize() => size;
+}
+
+public class Folder(string name) : FileSystemItem(name)
+{
+    private readonly List<FileSystemItem> _children = new();
+    public Folder Add(FileSystemItem item)
+    { _children.Add(item); return this; }
+
+    // Rekursion: Ordnergröße = Summe aller Kinder
+    public override long GetSize() =>
+        _children.Sum(c => c.GetSize());
+}
+
+var root = new Folder("projekt")
+    .Add(new FileItem("readme.md", 4))
+    .Add(new Folder("src")
+        .Add(new FileItem("main.cs", 120))
+        .Add(new FileItem("utils.cs", 80)));
+
+Console.WriteLine($"{root.Name}: {root.GetSize()} KB");  // 204 KB
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class FileSystemItem(ABC):
+    def __init__(self, name): self.name = name
+    @abstractmethod
+    def get_size(self) -> int: ...
+
+class File(FileSystemItem):
+    def __init__(self, name, size):
+        super().__init__(name); self.size = size
+    def get_size(self): return self.size
+
+class Folder(FileSystemItem):
+    def __init__(self, name):
+        super().__init__(name); self.children = []
+    def add(self, item):
+        self.children.append(item); return self
+    def get_size(self):              # Rekursion über den Baum
+        return sum(c.get_size() for c in self.children)
+
+root = (Folder("projekt")
+        .add(File("readme.md", 4))
+        .add(Folder("src")
+             .add(File("main.py", 120))
+             .add(File("utils.py", 80))))
+
+print(f"{root.name}: {root.get_size()} KB")   # 204 KB
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#composite
+
+### Decorator (GoF)
+
+**Intent:** The decorator wraps an object with a same-typed wrapper that executes additional behavior before or after delegating. Multiple decorators can be stacked – like onion layers. This yields flexible combinations without class explosion. Note: Python’s @decorator syntax is related but is a language feature for functions.
+
+**Analogy:** Winter clothing: you "decorate" yourself with sweater, jacket, scarf – each layer adds a property, and you stay the same person.
+
+**When to use:**
+- Extra behavior without inheritance (logging, caching, compression)
+- Combinable features at runtime
+- Extending sealed/foreign classes
+
+**Pros:** Behavior combinable at runtime; Single responsibility per decorator; Alternative to deep inheritance trees
+
+**Cons:** Many small classes; Layer order matters; Debugging through wrapper chains is tedious
+
+**C# example:**
+```csharp
+public interface IDataSource
+{
+    void Write(string data);
+}
+public class FileSource : IDataSource
+{
+    public void Write(string data)
+        => Console.WriteLine($"Datei ← '{data}'");
+}
+
+// Basis-Dekorator delegiert alles:
+public abstract class DataDecorator(IDataSource inner) : IDataSource
+{
+    public virtual void Write(string data) => inner.Write(data);
+}
+public class EncryptionDecorator(IDataSource inner)
+    : DataDecorator(inner)
+{
+    public override void Write(string data)
+        => base.Write($"verschlüsselt({data})");
+}
+public class CompressionDecorator(IDataSource inner)
+    : DataDecorator(inner)
+{
+    public override void Write(string data)
+        => base.Write($"komprimiert({data})");
+}
+
+// Schichten stapeln – Reihenfolge frei wählbar:
+IDataSource source =
+    new EncryptionDecorator(
+        new CompressionDecorator(
+            new FileSource()));
+
+source.Write("Geheim");
+// Datei ← 'komprimiert(verschlüsselt(Geheim))'
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class DataSource(ABC):
+    @abstractmethod
+    def write(self, data: str): ...
+
+class FileSource(DataSource):
+    def write(self, data): print(f"Datei ← '{data}'")
+
+class EncryptionDecorator(DataSource):
+    def __init__(self, inner: DataSource): self._inner = inner
+    def write(self, data):
+        self._inner.write(f"verschlüsselt({data})")
+
+class CompressionDecorator(DataSource):
+    def __init__(self, inner: DataSource): self._inner = inner
+    def write(self, data):
+        self._inner.write(f"komprimiert({data})")
+
+source = EncryptionDecorator(CompressionDecorator(FileSource()))
+source.write("Geheim")
+# Datei ← 'komprimiert(verschlüsselt(Geheim))'
+
+# Verwandt, aber ein Sprachfeature: Funktions-Dekoratoren
+# @lru_cache, @staticmethod, eigene @log-Decorator etc.
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#decorator
+
+### Facade (GoF)
+
+**Intent:** The facade bundles calls to a complicated subsystem (many classes, correct order, configuration) behind a single easy-to-use interface. The client only sees the facade; anyone needing special features can still bypass it.
+
+**Analogy:** A travel agency: one call – and flight, hotel and rental car are booked. You could organize everything individually, but the facade removes the complexity.
+
+**When to use:**
+- Hiding complex libraries behind a simple API
+- Layered architecture: clear entry points per layer
+- Decoupling clients from subsystem details
+
+**Pros:** Drastically simpler usage; Subsystem swappable behind the facade; Less coupling in client code
+
+**Cons:** Can grow into a "god object"; May hide useful detail functions; Extra layer for simple systems
+
+**C# example:**
+```csharp
+// Komplexes Subsystem:
+class VideoDecoder { public byte[] Decode(string f) { Console.WriteLine("Dekodiere " + f); return new byte[10]; } }
+class AudioMixer   { public byte[] Mix(byte[] v)   { Console.WriteLine("Mische Audio"); return v; } }
+class FileExporter { public void Save(byte[] d, string t) { Console.WriteLine("Speichere als " + t); } }
+
+// Die Fassade – EIN einfacher Einstiegspunkt:
+public class VideoConverterFacade
+{
+    public void ConvertToMp4(string file)
+    {
+        var decoder  = new VideoDecoder();
+        var mixer    = new AudioMixer();
+        var exporter = new FileExporter();
+
+        var raw   = decoder.Decode(file);
+        var mixed = mixer.Mix(raw);
+        exporter.Save(mixed, "video.mp4");
+        Console.WriteLine("Fertig!");
+    }
+}
+
+// Client-Code bleibt trivial:
+new VideoConverterFacade().ConvertToMp4("urlaub.avi");
+```
+
+**Python example:**
+```python
+# Komplexes Subsystem:
+class VideoDecoder:
+    def decode(self, f):
+        print(f"Dekodiere {f}"); return b"rohdaten"
+
+class AudioMixer:
+    def mix(self, v):
+        print("Mische Audio"); return v
+
+class FileExporter:
+    def save(self, d, target):
+        print(f"Speichere als {target}")
+
+# Die Fassade – EIN einfacher Einstiegspunkt:
+class VideoConverterFacade:
+    def convert_to_mp4(self, file: str):
+        raw   = VideoDecoder().decode(file)
+        mixed = AudioMixer().mix(raw)
+        FileExporter().save(mixed, "video.mp4")
+        print("Fertig!")
+
+# Client-Code bleibt trivial:
+VideoConverterFacade().convert_to_mp4("urlaub.avi")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#facade
+
+### Flyweight (GoF)
+
+**Intent:** Flyweight splits an object’s state into an intrinsic part (immutable, shareable – e.g. texture, font) and an extrinsic part (context-dependent – e.g. position). Intrinsic objects are cached in a factory and shared by all. This fits millions of "objects" into memory.
+
+**Analogy:** A text editor does not store the glyph "e" 10,000 times – it stores it once and only remembers the positions of all "e"s.
+
+**When to use:**
+- Very many similar objects (particles, glyphs, trees in a game)
+- RAM is the bottleneck
+- Intrinsic state clearly separable
+
+**Pros:** Huge memory savings; Centralized shared data; Combines well with Composite
+
+**Cons:** Code becomes more complex; CPU time for context lookup; Shared objects must be immutable
+
+**C# example:**
+```csharp
+// Intrinsisch (geteilt): Baumart mit Textur – teuer im RAM
+public record TreeType(string Name, string Texture);
+
+public static class TreeTypeFactory
+{
+    private static readonly Dictionary<string, TreeType> _cache = new();
+    public static TreeType Get(string name) =>
+        _cache.TryGetValue(name, out var t)
+            ? t
+            : _cache[name] = new TreeType(name, $"{name}.png");
+}
+
+// Extrinsisch (individuell): nur Position + Referenz
+public record Tree(int X, int Y, TreeType Type);
+
+var forest = new List<Tree>();
+var rnd = new Random();
+string[] kinds = { "Eiche", "Birke", "Kiefer" };
+
+for (int i = 0; i < 1_000_000; i++)
+    forest.Add(new Tree(rnd.Next(1000), rnd.Next(1000),
+        TreeTypeFactory.Get(kinds[rnd.Next(3)])));
+
+// 1 Mio. Bäume – aber nur 3 TreeType-Objekte im Speicher!
+```
+
+**Python example:**
+```python
+import random
+
+class TreeType:                      # intrinsisch – geteilt
+    _cache: dict[str, "TreeType"] = {}
+
+    def __init__(self, name):
+        self.name = name
+        self.texture = f"{name}.png"   # "teuer"
+
+    @classmethod
+    def get(cls, name):
+        if name not in cls._cache:
+            cls._cache[name] = cls(name)
+        return cls._cache[name]
+
+class Tree:                          # extrinsisch – individuell
+    __slots__ = ("x", "y", "type")   # spart zusätzlich RAM
+    def __init__(self, x, y, tree_type):
+        self.x, self.y, self.type = x, y, tree_type
+
+kinds = ["Eiche", "Birke", "Kiefer"]
+forest = [Tree(random.randrange(1000), random.randrange(1000),
+               TreeType.get(random.choice(kinds)))
+          for _ in range(1_000_000)]
+
+print(len(TreeType._cache))   # 3 – statt 1.000.000 Texturen!
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#flyweight
+
+### Proxy (GoF)
+
+**Intent:** The proxy implements the same interface as the real object and sits in front of it. Variants: virtual proxy (creates the expensive object on demand), protection proxy (checks permissions), caching proxy (remembers results), remote proxy (hides network communication – this is how gRPC stubs work).
+
+**Analogy:** An assistant: they take calls for the boss, filter out the unimportant, answer known questions themselves – and only put through what really needs the boss.
+
+**When to use:**
+- Lazy loading of heavy objects (virtual proxy)
+- Access control and audit logging
+- Caching expensive calls, encapsulating remote access
+
+**Pros:** Control without changing the real object; Lifecycle management possible; Transparent to the client
+
+**Cons:** Response times may increase; Additional complexity layer; Risk of duplicated logic in the proxy
+
+**C# example:**
+```csharp
+public interface IWeatherService
+{
+    string GetForecast(string city);
+}
+
+public class RealWeatherService : IWeatherService
+{
+    public string GetForecast(string city)
+    {
+        Console.WriteLine($"→ teurer API-Call für {city} ...");
+        Thread.Sleep(500);
+        return $"{city}: 24°C, sonnig";
+    }
+}
+
+// Caching Proxy – gleiche Schnittstelle, schaltet sich davor:
+public class CachedWeatherService(IWeatherService real)
+    : IWeatherService
+{
+    private readonly Dictionary<string, string> _cache = new();
+
+    public string GetForecast(string city)
+    {
+        if (_cache.TryGetValue(city, out var hit)) return hit;
+        return _cache[city] = real.GetForecast(city);
+    }
+}
+
+IWeatherService svc =
+    new CachedWeatherService(new RealWeatherService());
+Console.WriteLine(svc.GetForecast("Berlin"));  // API-Call
+Console.WriteLine(svc.GetForecast("Berlin"));  // aus dem Cache!
+```
+
+**Python example:**
+```python
+import time
+
+class RealWeatherService:
+    def get_forecast(self, city: str) -> str:
+        print(f"→ teurer API-Call für {city} ...")
+        time.sleep(0.5)
+        return f"{city}: 24°C, sonnig"
+
+class CachedWeatherService:          # Caching Proxy
+    def __init__(self, real: RealWeatherService):
+        self._real = real
+        self._cache: dict[str, str] = {}
+
+    def get_forecast(self, city: str) -> str:
+        if city not in self._cache:
+            self._cache[city] = self._real.get_forecast(city)
+        return self._cache[city]
+
+svc = CachedWeatherService(RealWeatherService())
+print(svc.get_forecast("Berlin"))   # API-Call
+print(svc.get_forecast("Berlin"))   # aus dem Cache!
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#proxy
+
+
+## Behavioral Patterns / Verhaltensmuster
+
+How do objects communicate and how are responsibilities distributed? These patterns organize workflows, responsibilities and algorithms.
+
+### Chain of Responsibility (GoF)
+
+**Intent:** Sender and receiver are decoupled: each handler decides whether to process the request or pass it to the next. The chain can be assembled at runtime. This is exactly how middleware pipelines in ASP.NET Core or Django work.
+
+**Analogy:** The support escalation path: first the chatbot tries, then first-level support, then engineering – each stage solves the problem or passes it on.
+
+**When to use:**
+- Multiple potential handlers, decided at runtime
+- Middleware/filter pipelines (auth → logging → validation)
+- Escalation logic and approval levels
+
+**Pros:** Sender does not know the handler; Order flexibly configurable; Single responsibility per handler
+
+**Cons:** Request may end unhandled; Debugging long chains is tedious; Runtime overhead per link
+
+**C# example:**
+```csharp
+public abstract class SupportHandler
+{
+    private SupportHandler? _next;
+    public SupportHandler SetNext(SupportHandler next)
+    { _next = next; return next; }
+
+    public virtual void Handle(string issue, int severity)
+    {
+        if (_next != null) _next.Handle(issue, severity);
+        else Console.WriteLine($"Unbearbeitet: {issue}");
+    }
+}
+
+public class ChatBot : SupportHandler
+{
+    public override void Handle(string issue, int severity)
+    {
+        if (severity <= 1) Console.WriteLine($"Bot löst: {issue}");
+        else base.Handle(issue, severity);   // weiterreichen
+    }
+}
+public class FirstLevel : SupportHandler
+{
+    public override void Handle(string issue, int severity)
+    {
+        if (severity <= 2) Console.WriteLine($"Support löst: {issue}");
+        else base.Handle(issue, severity);
+    }
+}
+public class Engineering : SupportHandler
+{
+    public override void Handle(string issue, int severity)
+        => Console.WriteLine($"Technik löst: {issue}");
+}
+
+var chain = new ChatBot();
+chain.SetNext(new FirstLevel()).SetNext(new Engineering());
+
+chain.Handle("Passwort vergessen", 1);   // Bot
+chain.Handle("Rechnung falsch", 2);      // Support
+chain.Handle("Server brennt", 3);        // Technik
+```
+
+**Python example:**
+```python
+class SupportHandler:
+    def __init__(self):
+        self._next = None
+
+    def set_next(self, handler):
+        self._next = handler
+        return handler                 # erlaubt Verkettung
+
+    def handle(self, issue, severity):
+        if self._next:
+            self._next.handle(issue, severity)
+        else:
+            print(f"Unbearbeitet: {issue}")
+
+class ChatBot(SupportHandler):
+    def handle(self, issue, severity):
+        if severity <= 1: print(f"Bot löst: {issue}")
+        else: super().handle(issue, severity)
+
+class FirstLevel(SupportHandler):
+    def handle(self, issue, severity):
+        if severity <= 2: print(f"Support löst: {issue}")
+        else: super().handle(issue, severity)
+
+class Engineering(SupportHandler):
+    def handle(self, issue, severity):
+        print(f"Technik löst: {issue}")
+
+chain = ChatBot()
+chain.set_next(FirstLevel()).set_next(Engineering())
+
+chain.handle("Passwort vergessen", 1)   # Bot
+chain.handle("Server brennt", 3)        # Technik
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#chain-of-responsibility
+
+### Command (GoF)
+
+**Intent:** Command encapsulates a request including all parameters in a standalone object. Actions become data: they can be queued, logged, sent over the network – and reversed with an undo method. The foundation of every "undo/redo" in editors.
+
+**Analogy:** The order slip in a restaurant: the waiter writes down the wish and hangs it in the kitchen – who cooks and when is decoupled from the guest. And the slip can be cancelled.
+
+**When to use:**
+- Undo/redo functionality
+- Actions in queues, macros, schedulers
+- Decoupling UI buttons/shortcuts from logic
+
+**Pros:** Undo/redo elegantly possible; Actions storable and transferable; New commands without changing the invoker
+
+**Cons:** One class per action → lots of code; Keeping undo state correct is tricky; Indirection reduces traceability
+
+**C# example:**
+```csharp
+public interface ICommand { void Execute(); void Undo(); }
+
+public class BankAccount
+{
+    public decimal Balance { get; private set; }
+    public void Deposit(decimal a)  { Balance += a; }
+    public void Withdraw(decimal a) { Balance -= a; }
+}
+
+public class DepositCommand(BankAccount acc, decimal amount)
+    : ICommand
+{
+    public void Execute() => acc.Deposit(amount);
+    public void Undo()    => acc.Withdraw(amount);
+}
+
+// Invoker mit Undo-Historie:
+public class TransactionManager
+{
+    private readonly Stack<ICommand> _history = new();
+    public void Run(ICommand cmd)
+    { cmd.Execute(); _history.Push(cmd); }
+    public void UndoLast()
+    { if (_history.Count > 0) _history.Pop().Undo(); }
+}
+
+var account = new BankAccount();
+var manager = new TransactionManager();
+manager.Run(new DepositCommand(account, 100));
+manager.Run(new DepositCommand(account, 50));
+Console.WriteLine(account.Balance);   // 150
+manager.UndoLast();
+Console.WriteLine(account.Balance);   // 100
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Command(ABC):
+    @abstractmethod
+    def execute(self): ...
+    @abstractmethod
+    def undo(self): ...
+
+class BankAccount:
+    def __init__(self): self.balance = 0
+
+class DepositCommand(Command):
+    def __init__(self, account, amount):
+        self.account, self.amount = account, amount
+    def execute(self): self.account.balance += self.amount
+    def undo(self):    self.account.balance -= self.amount
+
+class TransactionManager:            # Invoker mit Historie
+    def __init__(self): self._history = []
+    def run(self, cmd: Command):
+        cmd.execute()
+        self._history.append(cmd)
+    def undo_last(self):
+        if self._history:
+            self._history.pop().undo()
+
+account = BankAccount()
+mgr = TransactionManager()
+mgr.run(DepositCommand(account, 100))
+mgr.run(DepositCommand(account, 50))
+print(account.balance)   # 150
+mgr.undo_last()
+print(account.balance)   # 100
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#command
+
+### Interpreter (GoF)
+
+**Intent:** For recurring problems in a domain, a mini language (DSL) is sometimes worthwhile: filter expressions, formulas, rule sets. Interpreter maps each grammar rule to a class; expressions are composed into a tree (AST) and evaluated recursively. For complex languages, parser generators are the better choice.
+
+**Analogy:** A musician reading sheet music: notation is a grammar, and the musician "interprets" each symbol into sound according to fixed rules.
+
+**When to use:**
+- Small custom query/rule languages (filters, pricing rules)
+- Evaluating mathematical expressions
+- Configurable business rules
+
+**Pros:** Grammar clearly mapped in code; Easily extended with new rules; Domain experts can write expressions
+
+**Cons:** Scales poorly for complex grammars; One class per rule → class flood; Performance with deep trees
+
+**C# example:**
+```csharp
+// Grammatik: Expr = Zahl | Expr '+' Expr | Expr '-' Expr
+public interface IExpression { int Interpret(); }
+
+public class NumberExpr(int value) : IExpression
+{
+    public int Interpret() => value;
+}
+public class AddExpr(IExpression l, IExpression r) : IExpression
+{
+    public int Interpret() => l.Interpret() + r.Interpret();
+}
+public class SubExpr(IExpression l, IExpression r) : IExpression
+{
+    public int Interpret() => l.Interpret() - r.Interpret();
+}
+
+// AST für: (10 + 5) - 3
+IExpression expr =
+    new SubExpr(
+        new AddExpr(new NumberExpr(10), new NumberExpr(5)),
+        new NumberExpr(3));
+
+Console.WriteLine(expr.Interpret());   // 12
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Expression(ABC):
+    @abstractmethod
+    def interpret(self) -> int: ...
+
+class Number(Expression):
+    def __init__(self, value): self.value = value
+    def interpret(self): return self.value
+
+class Add(Expression):
+    def __init__(self, left, right):
+        self.left, self.right = left, right
+    def interpret(self):
+        return self.left.interpret() + self.right.interpret()
+
+class Sub(Expression):
+    def __init__(self, left, right):
+        self.left, self.right = left, right
+    def interpret(self):
+        return self.left.interpret() - self.right.interpret()
+
+# AST für: (10 + 5) - 3
+expr = Sub(Add(Number(10), Number(5)), Number(3))
+print(expr.interpret())   # 12
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#interpreter
+
+### Iterator (GoF)
+
+**Intent:** The iterator encapsulates the "how" of traversal: the client just says "next element", regardless of whether an array, tree or database is behind it. Both languages have the pattern built in: foreach/IEnumerable in C#, for-in/generators in Python – usually implemented declaratively with yield.
+
+**Analogy:** A museum audio guide: it leads you piece by piece through the exhibition – you never need to know the floor plan.
+
+**When to use:**
+- Uniform traversal of different data structures
+- Lazy sequences: elements created on access
+- Multiple simultaneous traversals of the same collection
+
+**Pros:** Collection internals stay hidden; Lazy evaluation saves memory; Language support: yield makes it trivial
+
+**Cons:** Overhead for simple lists; Modification during iteration is problematic; Stateful iterators hard to parallelize
+
+**C# example:**
+```csharp
+public class Playlist : IEnumerable<string>
+{
+    private readonly List<string> _songs = new();
+    public void Add(string song) => _songs.Add(song);
+
+    // Eigener Iterator mit yield – lazy & simpel:
+    public IEnumerator<string> GetEnumerator()
+    {
+        foreach (var song in _songs)
+        {
+            Console.WriteLine("(lade nächsten Song ...)");
+            yield return song;      // pausiert hier!
+        }
+    }
+    System.Collections.IEnumerator
+        System.Collections.IEnumerable.GetEnumerator()
+        => GetEnumerator();
+}
+
+var list = new Playlist();
+list.Add("Song A"); list.Add("Song B");
+
+foreach (var s in list)        // nutzt unseren Iterator
+    Console.WriteLine($"▶ {s}");
+
+// Unendliche Lazy-Sequenz:
+static IEnumerable<int> Numbers()
+{ int i = 0; while (true) yield return i++; }
+Console.WriteLine(Numbers().Take(3).Sum());   // 0+1+2 = 3
+```
+
+**Python example:**
+```python
+class Playlist:
+    def __init__(self):
+        self._songs = []
+
+    def add(self, song):
+        self._songs.append(song)
+
+    def __iter__(self):              # Generator = Iterator
+        for song in self._songs:
+            print("(lade nächsten Song ...)")
+            yield song               # pausiert hier!
+
+playlist = Playlist()
+playlist.add("Song A")
+playlist.add("Song B")
+
+for s in playlist:                   # nutzt unseren Iterator
+    print(f"▶ {s}")
+
+# Unendliche Lazy-Sequenz:
+def numbers():
+    i = 0
+    while True:
+        yield i
+        i += 1
+
+import itertools
+print(sum(itertools.islice(numbers(), 3)))   # 0+1+2 = 3
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#iterator
+
+### Mediator (GoF)
+
+**Intent:** With n objects knowing each other directly, up to n·(n−1)/2 connections emerge. The mediator replaces this mesh: all components talk only to it, it coordinates. Known from UI dialogs (field A controls visibility of field B) and in .NET via the MediatR library.
+
+**Analogy:** The airport control tower: pilots never talk directly to each other – the tower coordinates take-offs and landings centrally.
+
+**When to use:**
+- Many components with complex interactions (UI forms)
+- Chat rooms, event coordination
+- Making communication logic centrally testable
+
+**Pros:** Components no longer know each other; Communication logic in one place; Components individually reusable
+
+**Cons:** Mediator can become a god object; Additional indirection; Single point of failure
+
+**C# example:**
+```csharp
+public interface IChatRoom
+{
+    void Broadcast(string from, string msg);
+}
+
+public class User(string name, IChatRoom room)
+{
+    public string Name => name;
+    public void Send(string msg) => room.Broadcast(name, msg);
+    public void Receive(string from, string msg)
+        => Console.WriteLine($"[{name}] {from}: {msg}");
+}
+
+// Der Mediator – kennt alle, koordiniert alles:
+public class ChatRoom : IChatRoom
+{
+    private readonly List<User> _users = new();
+    public User Join(string name)
+    {
+        var u = new User(name, this);
+        _users.Add(u);
+        return u;
+    }
+    public void Broadcast(string from, string msg)
+    {
+        foreach (var u in _users.Where(u => u.Name != from))
+            u.Receive(from, msg);
+    }
+}
+
+var room = new ChatRoom();
+var anna = room.Join("Anna");
+room.Join("Ben"); room.Join("Cara");
+anna.Send("Hallo zusammen!");   // Ben & Cara empfangen
+```
+
+**Python example:**
+```python
+class ChatRoom:                     # der Mediator
+    def __init__(self):
+        self._users = []
+
+    def join(self, name):
+        user = User(name, self)
+        self._users.append(user)
+        return user
+
+    def broadcast(self, sender, msg):
+        for user in self._users:
+            if user.name != sender:
+                user.receive(sender, msg)
+
+class User:
+    def __init__(self, name, room: ChatRoom):
+        self.name, self._room = name, room
+
+    def send(self, msg):
+        self._room.broadcast(self.name, msg)   # nur via Mediator
+
+    def receive(self, sender, msg):
+        print(f"[{self.name}] {sender}: {msg}")
+
+room = ChatRoom()
+anna = room.join("Anna")
+room.join("Ben"); room.join("Cara")
+anna.send("Hallo zusammen!")   # Ben & Cara empfangen
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#mediator
+
+### Memento (GoF)
+
+**Intent:** Memento allows saving and restoring an object’s state without violating its encapsulation. Three roles: the originator (creates snapshots of its state), the memento (immutable snapshot) and the caretaker (manages history without looking inside).
+
+**Analogy:** Save games: save before the boss fight – if it goes wrong, you load the snapshot. The game never tells you what is inside the file.
+
+**When to use:**
+- Undo/rollback of object states
+- Snapshots before risky operations (transactions)
+- Editor history combined with Command
+
+**Pros:** Encapsulation preserved; Simple state rollback; History arbitrarily deep
+
+**Cons:** Memory usage with large states; Caretaker must manage lifecycle; Deep copy costs
+
+**C# example:**
+```csharp
+public class Editor
+{
+    public string Text { get; private set; } = "";
+    public void Type(string words) => Text += words;
+
+    // Originator erzeugt/liest Mementos:
+    public record Memento(string State);
+    public Memento Save() => new(Text);
+    public void Restore(Memento m) => Text = m.State;
+}
+
+// Caretaker verwaltet die Historie – ohne Inhalt zu kennen:
+public class History
+{
+    private readonly Stack<Editor.Memento> _stack = new();
+    public void Backup(Editor e) => _stack.Push(e.Save());
+    public void Undo(Editor e)
+    { if (_stack.Count > 0) e.Restore(_stack.Pop()); }
+}
+
+var editor = new Editor();
+var history = new History();
+
+editor.Type("Hallo ");
+history.Backup(editor);       // Schnappschuss
+editor.Type("Welt – ups, Tippfehler!");
+history.Undo(editor);         // zurück zum Schnappschuss
+Console.WriteLine(editor.Text);   // "Hallo "
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Memento:                 # unveränderlicher Schnappschuss
+    state: str
+
+class Editor:                  # Originator
+    def __init__(self): self.text = ""
+    def type(self, words): self.text += words
+    def save(self) -> Memento: return Memento(self.text)
+    def restore(self, m: Memento): self.text = m.state
+
+class History:                 # Caretaker
+    def __init__(self): self._stack = []
+    def backup(self, editor): self._stack.append(editor.save())
+    def undo(self, editor):
+        if self._stack:
+            editor.restore(self._stack.pop())
+
+editor, history = Editor(), History()
+editor.type("Hallo ")
+history.backup(editor)             # Schnappschuss
+editor.type("Welt – ups, Tippfehler!")
+history.undo(editor)               # zurück zum Schnappschuss
+print(editor.text)                 # "Hallo "
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#memento
+
+### Observer (GoF)
+
+**Intent:** Observer defines a 1:n dependency: when the subject changes state, all registered observers are notified – without the subject knowing their concrete classes. The pattern is the heart of event systems: C# events, GUI frameworks, Rx, MQTT. It underpins almost every reactive architecture.
+
+**Analogy:** A YouTube channel: subscribers automatically get notified about every new video – the channel does not know its subscribers personally.
+
+**When to use:**
+- GUI events: click, input, state change
+- Reporting model changes to multiple views (MVC!)
+- Loosely coupled event communication
+
+**Pros:** Loose coupling subject ↔ observer; Subscribers can join/leave at runtime; Broadcast to any number of receivers
+
+**Cons:** Notification order undefined; Memory leaks if unsubscribe is forgotten; Update cascades hard to trace
+
+**C# example:**
+```csharp
+// In C# idiomatisch mit event/EventHandler:
+public class WeatherStation
+{
+    public event EventHandler<float>? TemperatureChanged;
+
+    private float _temp;
+    public float Temperature
+    {
+        get => _temp;
+        set { _temp = value; TemperatureChanged?.Invoke(this, value); }
+    }
+}
+
+var station = new WeatherStation();
+
+// Beliebig viele Abonnenten:
+station.TemperatureChanged += (_, t) =>
+    Console.WriteLine($"Display: {t}°C");
+station.TemperatureChanged += (_, t) =>
+{
+    if (t > 30) Console.WriteLine("Warnung: Hitze!");
+};
+
+station.Temperature = 25;   // Display: 25°C
+station.Temperature = 32;   // Display: 32°C + Warnung: Hitze!
+```
+
+**Python example:**
+```python
+class WeatherStation:                   # Subjekt
+    def __init__(self):
+        self._observers = []
+        self._temp = 0.0
+
+    def subscribe(self, callback):
+        self._observers.append(callback)
+
+    def unsubscribe(self, callback):
+        self._observers.remove(callback)
+
+    @property
+    def temperature(self): return self._temp
+
+    @temperature.setter
+    def temperature(self, value):
+        self._temp = value
+        for notify in self._observers:   # alle benachrichtigen
+            notify(value)
+
+station = WeatherStation()
+station.subscribe(lambda t: print(f"Display: {t}°C"))
+station.subscribe(lambda t: t > 30 and print("Warnung: Hitze!"))
+
+station.temperature = 25    # Display: 25°C
+station.temperature = 32    # Display: 32°C + Warnung: Hitze!
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#observer
+
+### State (GoF)
+
+**Intent:** Instead of huge switch/if blocks ("if status == X then …"), each state gets its own class with the matching behavior. The context object delegates to its current state object and swaps it on transitions. Ideal for state machines: order status, players, connections, workflows.
+
+**Analogy:** Your smartphone: in silent mode it reacts to a call differently than in normal or do-not-disturb mode – same button, different behavior per state.
+
+**When to use:**
+- State machines: orders, documents, connections
+- Behavior depends heavily on status
+- Replacing if/switch cascades over status fields
+
+**Pros:** State logic cleanly separated; New states without changing others; Transitions explicit and traceable
+
+**Cons:** Many classes with many states; Transition overview gets scattered; Often overkill for 2–3 states
+
+**C# example:**
+```csharp
+public abstract class OrderState
+{
+    public abstract string Name { get; }
+    public abstract OrderState Next();
+}
+public class Placed : OrderState
+{
+    public override string Name => "Bestellt";
+    public override OrderState Next() => new Shipped();
+}
+public class Shipped : OrderState
+{
+    public override string Name => "Versandt";
+    public override OrderState Next() => new Delivered();
+}
+public class Delivered : OrderState
+{
+    public override string Name => "Zugestellt";
+    public override OrderState Next() => this;   // Endzustand
+}
+
+public class Order
+{
+    private OrderState _state = new Placed();
+    public string Status => _state.Name;
+    public void Advance() => _state = _state.Next();
+}
+
+var order = new Order();
+Console.WriteLine(order.Status);   // Bestellt
+order.Advance();
+Console.WriteLine(order.Status);   // Versandt
+order.Advance();
+Console.WriteLine(order.Status);   // Zugestellt
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class OrderState(ABC):
+    name = "?"
+    @abstractmethod
+    def next(self) -> "OrderState": ...
+
+class Placed(OrderState):
+    name = "Bestellt"
+    def next(self): return Shipped()
+
+class Shipped(OrderState):
+    name = "Versandt"
+    def next(self): return Delivered()
+
+class Delivered(OrderState):
+    name = "Zugestellt"
+    def next(self): return self      # Endzustand
+
+class Order:
+    def __init__(self): self._state = Placed()
+    @property
+    def status(self): return self._state.name
+    def advance(self): self._state = self._state.next()
+
+order = Order()
+print(order.status)    # Bestellt
+order.advance()
+print(order.status)    # Versandt
+order.advance()
+print(order.status)    # Zugestellt
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#state
+
+### Strategy (GoF)
+
+**Intent:** Strategy defines a family of algorithms (e.g. shipping cost calculations, sorting, payment methods) and makes them interchangeable. The context only knows the interface. In modern languages lambdas/delegates often play the role of strategy classes – the idea stays identical.
+
+**Analogy:** Commuting to work: car, bike or train – the goal is the same, the algorithm (route) is interchangeable, and you decide situationally.
+
+**When to use:**
+- Multiple variants of the same algorithm
+- Switching behavior at runtime (pricing, discount logic)
+- Replacing if/else over "mode" variables
+
+**Pros:** Algorithms isolated and individually testable; Open-closed: new strategy = new class; Runtime swapping possible
+
+**Cons:** Client must know and choose strategies; More objects around; Unnecessary with few, stable variants
+
+**C# example:**
+```csharp
+public interface IShippingStrategy
+{
+    decimal Calculate(decimal orderTotal);
+}
+public class StandardShipping : IShippingStrategy
+{
+    public decimal Calculate(decimal t) => t > 50 ? 0 : 4.95m;
+}
+public class ExpressShipping : IShippingStrategy
+{
+    public decimal Calculate(decimal t) => 12.90m;
+}
+public class PickupShipping : IShippingStrategy
+{
+    public decimal Calculate(decimal t) => 0;
+}
+
+public class Checkout(IShippingStrategy strategy)
+{
+    public void PrintTotal(decimal total)
+    {
+        var ship = strategy.Calculate(total);
+        Console.WriteLine($"Ware {total} € + Versand {ship} €");
+    }
+}
+
+// Strategie wird zur Laufzeit gewählt:
+new Checkout(new StandardShipping()).PrintTotal(39.99m);
+new Checkout(new ExpressShipping()).PrintTotal(39.99m);
+
+// Modern: Delegate statt Klasse
+Func<decimal, decimal> eco = t => t > 50 ? 0 : 3.50m;
+```
+
+**Python example:**
+```python
+from typing import Callable
+
+# Klassisch mit Klassen – oder pythonisch mit Funktionen:
+def standard_shipping(total: float) -> float:
+    return 0 if total > 50 else 4.95
+
+def express_shipping(total: float) -> float:
+    return 12.90
+
+def pickup(total: float) -> float:
+    return 0
+
+class Checkout:
+    def __init__(self, strategy: Callable[[float], float]):
+        self._strategy = strategy      # Funktion als Strategie
+
+    def print_total(self, total: float):
+        ship = self._strategy(total)
+        print(f"Ware {total} € + Versand {ship} €")
+
+# Strategie wird zur Laufzeit gewählt:
+Checkout(standard_shipping).print_total(39.99)
+Checkout(express_shipping).print_total(39.99)
+Checkout(pickup).print_total(39.99)
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#strategy
+
+### Template Method (GoF)
+
+**Intent:** The template method fixes the invariant sequence of steps (the "recipe") in the base class and declares individual steps as abstract or overridable (hooks). Subclasses only adapt these steps – the overall structure is guaranteed to remain. Hollywood principle: "Don’t call us, we call you."
+
+**Analogy:** A baking recipe: the steps "mix dough → bake → decorate" are fixed. Whether it becomes chocolate or lemon cake is decided by the concrete ingredients in the individual steps.
+
+**When to use:**
+- Same flow, different details (import: CSV/JSON/XML)
+- Frameworks with extension points (hooks)
+- Removing duplication in similar algorithms
+
+**Pros:** Flow centrally guaranteed; Duplicates move to the base class; Targeted extension points
+
+**Cons:** Inheritance instead of composition (more rigid); Liskov violations possible; Many hooks → confusing
+
+**C# example:**
+```csharp
+public abstract class DataImporter
+{
+    // DIE Template Method – Ablauf ist fixiert:
+    public void Import(string file)
+    {
+        var raw = ReadFile(file);
+        var records = Parse(raw);        // variiert je Format
+        Validate(records);
+        Console.WriteLine($"{records.Count} Datensätze importiert");
+    }
+
+    private string ReadFile(string f) => $"Inhalt von {f}";
+    protected abstract List<string> Parse(string raw);
+    protected virtual void Validate(List<string> r)   // Hook
+        => Console.WriteLine("Standard-Validierung");
+}
+
+public class CsvImporter : DataImporter
+{
+    protected override List<string> Parse(string raw)
+        => raw.Split(',').ToList();
+}
+public class JsonImporter : DataImporter
+{
+    protected override List<string> Parse(string raw)
+        => new() { "json1", "json2" };
+    protected override void Validate(List<string> r)
+        => Console.WriteLine("Strenge JSON-Schema-Prüfung");
+}
+
+new CsvImporter().Import("daten.csv");
+new JsonImporter().Import("daten.json");
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class DataImporter(ABC):
+    def import_file(self, file: str):     # Template Method
+        raw = self._read(file)
+        records = self.parse(raw)         # variiert je Format
+        self.validate(records)            # Hook
+        print(f"{len(records)} Datensätze importiert")
+
+    def _read(self, f): return f"Inhalt von {f}"
+
+    @abstractmethod
+    def parse(self, raw: str) -> list: ...
+
+    def validate(self, records):          # Hook mit Default
+        print("Standard-Validierung")
+
+class CsvImporter(DataImporter):
+    def parse(self, raw): return raw.split(",")
+
+class JsonImporter(DataImporter):
+    def parse(self, raw): return ["json1", "json2"]
+    def validate(self, records):
+        print("Strenge JSON-Schema-Prüfung")
+
+CsvImporter().import_file("daten.csv")
+JsonImporter().import_file("daten.json")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#template-method
+
+### Visitor (GoF)
+
+**Intent:** Visitor separates algorithms from the object structure they operate on. Each element "accepts" a visitor and calls its matching method (double dispatch). New operations (export, statistics, rendering) are added as new visitor classes – element classes stay untouched. Classic for compiler ASTs.
+
+**Analogy:** An insurance agent visits buildings: at a home they sell home insurance, at an office commercial insurance – the building stays the same, the visitor brings the behavior.
+
+**When to use:**
+- Many different operations on a stable object structure
+- Compiler/AST traversal, export to multiple formats
+- Cleanly separating operations from data classes
+
+**Pros:** New operations without element changes; Related logic bundled in one visitor class; Double dispatch elegantly solves type switches
+
+**Cons:** New element types require changing all visitors; Awkward when the structure changes; Needs access to internals → encapsulation suffers
+
+**C# example:**
+```csharp
+public interface IShapeVisitor
+{
+    void Visit(Circle c);
+    void Visit(Rectangle r);
+}
+public interface IShape { void Accept(IShapeVisitor v); }
+
+public class Circle : IShape
+{
+    public double Radius = 3;
+    public void Accept(IShapeVisitor v) => v.Visit(this);
+}
+public class Rectangle : IShape
+{
+    public double W = 4, H = 5;
+    public void Accept(IShapeVisitor v) => v.Visit(this);
+}
+
+// Neue Operation = neue Visitor-Klasse:
+public class AreaVisitor : IShapeVisitor
+{
+    public double Total { get; private set; }
+    public void Visit(Circle c) => Total += Math.PI * c.Radius * c.Radius;
+    public void Visit(Rectangle r) => Total += r.W * r.H;
+}
+
+var shapes = new List<IShape> { new Circle(), new Rectangle() };
+var area = new AreaVisitor();
+foreach (var s in shapes) s.Accept(area);   // Double Dispatch
+Console.WriteLine($"Gesamtfläche: {area.Total:F1}");
+```
+
+**Python example:**
+```python
+import math
+
+class Circle:
+    def __init__(self): self.radius = 3
+    def accept(self, visitor): visitor.visit_circle(self)
+
+class Rectangle:
+    def __init__(self): self.w, self.h = 4, 5
+    def accept(self, visitor): visitor.visit_rectangle(self)
+
+# Neue Operation = neue Visitor-Klasse:
+class AreaVisitor:
+    def __init__(self): self.total = 0.0
+    def visit_circle(self, c):
+        self.total += math.pi * c.radius ** 2
+    def visit_rectangle(self, r):
+        self.total += r.w * r.h
+
+class ExportVisitor:
+    def visit_circle(self, c): print(f"<circle r='{c.radius}'/>")
+    def visit_rectangle(self, r): print(f"<rect w='{r.w}'/>")
+
+shapes = [Circle(), Rectangle()]
+area = AreaVisitor()
+for s in shapes:
+    s.accept(area)            # Double Dispatch
+print(f"Gesamtfläche: {area.total:.1f}")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#visitor
+
+### Null Object (Beyond GoF)
+
+**Intent:** Instead of checking if (x != null) everywhere, you return a null object: it implements the same interface but simply does nothing (or the neutral right thing). Client code thus handles the "absent" case completely transparently. Popular for loggers, optional discounts or guest users.
+
+**Analogy:** An answering machine: if nobody is home, "someone" still picks up – the caller does not need a special case.
+
+**When to use:**
+- null checks proliferating through code
+- Optional dependencies (logger, tracing)
+- Default behavior for "not found"
+
+**Pros:** Fewer branches, fewer null reference errors; Client code stays linearly readable; Combines well with Factory/DI
+
+**Cons:** Errors may be silently swallowed; "Do nothing" must actually be correct; Extra class per interface
+
+**C# example:**
+```csharp
+public interface ILogger { void Log(string msg); }
+
+public class ConsoleLogger : ILogger
+{
+    public void Log(string msg) => Console.WriteLine($"LOG: {msg}");
+}
+
+// Das Null Object – gleiche Schnittstelle, tut nichts:
+public class NullLogger : ILogger
+{
+    public static readonly NullLogger Instance = new();
+    public void Log(string msg) { /* bewusst leer */ }
+}
+
+public class PaymentService(ILogger logger)
+{
+    public void Pay(decimal amount)
+    {
+        // KEIN if (logger != null) nötig!
+        logger.Log($"Zahlung über {amount} € gestartet");
+        Console.WriteLine("Zahlung verarbeitet.");
+    }
+}
+
+new PaymentService(new ConsoleLogger()).Pay(9.99m); // mit Log
+new PaymentService(NullLogger.Instance).Pay(9.99m); // still
+```
+
+**Python example:**
+```python
+class ConsoleLogger:
+    def log(self, msg): print(f"LOG: {msg}")
+
+class NullLogger:                # gleiche Schnittstelle, tut nichts
+    def log(self, msg): pass     # bewusst leer
+
+class PaymentService:
+    def __init__(self, logger=None):
+        self._logger = logger or NullLogger()   # nie None!
+
+    def pay(self, amount):
+        # KEIN "if self._logger is not None" nötig:
+        self._logger.log(f"Zahlung über {amount} € gestartet")
+        print("Zahlung verarbeitet.")
+
+PaymentService(ConsoleLogger()).pay(9.99)   # mit Log
+PaymentService().pay(9.99)                  # still – kein Fehler
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#null-object
+
+### Specification (Beyond GoF)
+
+**Intent:** A specification answers exactly one question about an object: "Do you satisfy this criterion?" Via And/Or/Not, rules combine like building blocks – reusable in validation, filtering and database queries. Originates from domain-driven design (Eric Evans & Martin Fowler).
+
+**Analogy:** A car-buying checklist: "under €10,000" AND "less than 100,000 km" OR "warranty". Each card is a rule – you combine them freely.
+
+**When to use:**
+- Complex, combinable business rules
+- Using the same rule for validation AND querying
+- Making rules individually testable
+
+**Pros:** Rules reusable and combinable; Domain logic explicitly named; Individually unit-testable
+
+**Cons:** Overhead for simple conditions; Translating to SQL needs extra work; Rule explosion without discipline
+
+**C# example:**
+```csharp
+public abstract class Spec<T>
+{
+    public abstract bool IsSatisfiedBy(T item);
+    public Spec<T> And(Spec<T> other) => new AndSpec<T>(this, other);
+    public Spec<T> Or(Spec<T> other)  => new OrSpec<T>(this, other);
+}
+public class AndSpec<T>(Spec<T> a, Spec<T> b) : Spec<T>
+{
+    public override bool IsSatisfiedBy(T i)
+        => a.IsSatisfiedBy(i) && b.IsSatisfiedBy(i);
+}
+public class OrSpec<T>(Spec<T> a, Spec<T> b) : Spec<T>
+{
+    public override bool IsSatisfiedBy(T i)
+        => a.IsSatisfiedBy(i) || b.IsSatisfiedBy(i);
+}
+
+public record Car(decimal Price, int Km);
+public class Cheap : Spec<Car>
+{ public override bool IsSatisfiedBy(Car c) => c.Price < 10000; }
+public class LowMileage : Spec<Car>
+{ public override bool IsSatisfiedBy(Car c) => c.Km < 100000; }
+
+var goodDeal = new Cheap().And(new LowMileage());
+Console.WriteLine(goodDeal.IsSatisfiedBy(new Car(8500, 60000)));
+// True
+```
+
+**Python example:**
+```python
+from abc import ABC, abstractmethod
+
+class Spec(ABC):
+    @abstractmethod
+    def is_satisfied_by(self, item) -> bool: ...
+    def __and__(self, other): return AndSpec(self, other)
+    def __or__(self, other):  return OrSpec(self, other)
+
+class AndSpec(Spec):
+    def __init__(self, a, b): self.a, self.b = a, b
+    def is_satisfied_by(self, i):
+        return self.a.is_satisfied_by(i) and self.b.is_satisfied_by(i)
+
+class OrSpec(Spec):
+    def __init__(self, a, b): self.a, self.b = a, b
+    def is_satisfied_by(self, i):
+        return self.a.is_satisfied_by(i) or self.b.is_satisfied_by(i)
+
+class Cheap(Spec):
+    def is_satisfied_by(self, car): return car["price"] < 10000
+
+class LowMileage(Spec):
+    def is_satisfied_by(self, car): return car["km"] < 100000
+
+good_deal = Cheap() & LowMileage()      # Operator-Overloading!
+print(good_deal.is_satisfied_by({"price": 8500, "km": 60000}))
+# True
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#specification
+
+
+## Concurrency Patterns / Nebenläufigkeit
+
+Patterns for multithreading and asynchronous programming: safe communication between threads, efficient resource usage and avoiding race conditions.
+
+### Producer-Consumer (Beyond GoF)
+
+**Intent:** Producers put work items into a queue, consumers take and process them – at their own pace and count. The queue buffers load spikes and synchronizes the threads. Foundation of many systems: message brokers (RabbitMQ, Kafka), logging pipelines, background workers.
+
+**Analogy:** A restaurant kitchen: waiters (producers) pin orders to the rail, cooks (consumers) work through them – nobody waits directly for the other.
+
+**When to use:**
+- Buffering load spikes (uploads, orders)
+- Decoupling slow processing from fast production
+- Distributing work to multiple worker threads
+
+**Pros:** Natural decoupling and scaling; Backpressure via bounded queue possible; Threads cleanly synchronized
+
+**Cons:** Queue overflow must be considered; Ordering guarantees cost extra; Shutdown coordination needed (poison pill)
+
+**C# example:**
+```csharp
+using System.Threading.Channels;
+
+// Modern in C#: System.Threading.Channels
+var channel = Channel.CreateBounded<string>(capacity: 10);
+
+// Producer:
+var producer = Task.Run(async () =>
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        await channel.Writer.WriteAsync($"Bestellung #{i}");
+        Console.WriteLine($"→ Bestellung #{i} aufgegeben");
+    }
+    channel.Writer.Complete();   // Signal: fertig
+});
+
+// Consumer (könnte mehrfach laufen):
+var consumer = Task.Run(async () =>
+{
+    await foreach (var order in channel.Reader.ReadAllAsync())
+    {
+        await Task.Delay(200);   // Verarbeitung simulieren
+        Console.WriteLine($"✓ {order} zubereitet");
+    }
+});
+
+await Task.WhenAll(producer, consumer);
+```
+
+**Python example:**
+```python
+import queue, threading, time
+
+q: "queue.Queue[str|None]" = queue.Queue(maxsize=10)
+
+def producer():
+    for i in range(1, 6):
+        q.put(f"Bestellung #{i}")        # blockiert, wenn voll
+        print(f"→ Bestellung #{i} aufgegeben")
+    q.put(None)                          # Poison Pill: fertig
+
+def consumer():
+    while True:
+        order = q.get()                  # blockiert, wenn leer
+        if order is None:
+            break
+        time.sleep(0.2)                  # Verarbeitung simulieren
+        print(f"✓ {order} zubereitet")
+        q.task_done()
+
+t1 = threading.Thread(target=producer)
+t2 = threading.Thread(target=consumer)
+t1.start(); t2.start()
+t1.join(); t2.join()
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#producer-consumer
+
+### Thread Pool (Beyond GoF)
+
+**Intent:** Creating threads is expensive. A thread pool keeps a limited number of worker threads that process tasks from a queue. This caps concurrent threads (overload protection) and saves creation costs. Both languages ship ready-made pools: Task/ThreadPool in .NET, concurrent.futures in Python.
+
+**Analogy:** Taxis at a station: a fixed fleet serves all passengers one after another – nobody builds a new taxi for each ride.
+
+**When to use:**
+- Many short independent tasks
+- Limiting the number of parallel jobs
+- Parallelizing I/O-heavy tasks (downloads, API calls)
+
+**Pros:** No thread creation cost per task; Built-in resource ceiling; Ready implementations in both languages
+
+**Cons:** Wrong pool size → congestion or waste; Long blockers clog the pool; Debugging parallel tasks is harder
+
+**C# example:**
+```csharp
+// .NET verwaltet den ThreadPool automatisch über Task:
+var urls = new[] { "seite-a", "seite-b", "seite-c", "seite-d" };
+
+async Task<string> DownloadAsync(string url)
+{
+    Console.WriteLine($"Lade {url} " +
+        $"(Thread {Environment.CurrentManagedThreadId})");
+    await Task.Delay(300);            // I/O simulieren
+    return $"{url}: 200 OK";
+}
+
+// Alle Aufgaben laufen auf Pool-Threads:
+var results = await Task.WhenAll(urls.Select(DownloadAsync));
+
+foreach (var r in results)
+    Console.WriteLine(r);
+
+// Parallelität gezielt begrenzen:
+var options = new ParallelOptions { MaxDegreeOfParallelism = 2 };
+await Parallel.ForEachAsync(urls, options,
+    async (url, _) => await DownloadAsync(url));
+```
+
+**Python example:**
+```python
+from concurrent.futures import ThreadPoolExecutor
+import threading, time
+
+urls = ["seite-a", "seite-b", "seite-c", "seite-d"]
+
+def download(url: str) -> str:
+    print(f"Lade {url} ({threading.current_thread().name})")
+    time.sleep(0.3)                  # I/O simulieren
+    return f"{url}: 200 OK"
+
+# Pool mit max. 2 gleichzeitigen Threads:
+with ThreadPoolExecutor(max_workers=2) as pool:
+    results = list(pool.map(download, urls))
+
+for r in results:
+    print(r)
+
+# Für CPU-lastige Arbeit: ProcessPoolExecutor
+# (umgeht das GIL durch echte Prozesse)
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#thread-pool
+
+### Future / Promise (Beyond GoF)
+
+**Intent:** A future/promise represents the result of an ongoing asynchronous operation. The caller immediately receives the placeholder object and decides when to wait or chain follow-up actions. The async/await keywords of both languages are syntactic sugar over exactly this pattern (Task in C#, Future/coroutine in Python).
+
+**Analogy:** The buzzer at a bakery: you order, immediately get a buzzer (the future) and can sit down. When it buzzes, you pick up the finished result.
+
+**When to use:**
+- Non-blocking I/O calls (HTTP, DB, files)
+- Starting several operations in parallel, collecting later
+- Result chaining: then-do-this pipelines
+
+**Pros:** Caller stays responsive; Composition: WhenAll, gather, chaining; Errors propagate in a structured way
+
+**Cons:** Async "colors" the call chain; Forgotten await = silent bug; Debugging async stacks takes getting used to
+
+**C# example:**
+```csharp
+// Task<T> IST das Future in C#:
+async Task<decimal> FetchPriceAsync(string shop)
+{
+    Console.WriteLine($"Frage {shop} an ...");
+    await Task.Delay(500);            // Netzwerk simulieren
+    return shop == "A" ? 19.99m : 17.49m;
+}
+
+// Beide Anfragen laufen GLEICHZEITIG:
+Task<decimal> priceA = FetchPriceAsync("A");   // sofort zurück!
+Task<decimal> priceB = FetchPriceAsync("B");
+
+Console.WriteLine("Beide Anfragen laufen ...");
+
+decimal[] prices = await Task.WhenAll(priceA, priceB);
+Console.WriteLine($"Bester Preis: {prices.Min()} €");
+
+// Gesamtdauer: ~500 ms statt 1000 ms sequenziell.
+```
+
+**Python example:**
+```python
+import asyncio
+
+async def fetch_price(shop: str) -> float:
+    print(f"Frage {shop} an ...")
+    await asyncio.sleep(0.5)          # Netzwerk simulieren
+    return 19.99 if shop == "A" else 17.49
+
+async def main():
+    # Beide Coroutinen laufen GLEICHZEITIG:
+    task_a = asyncio.create_task(fetch_price("A"))
+    task_b = asyncio.create_task(fetch_price("B"))
+
+    print("Beide Anfragen laufen ...")
+
+    prices = await asyncio.gather(task_a, task_b)
+    print(f"Bester Preis: {min(prices)} €")
+
+asyncio.run(main())
+# Gesamtdauer: ~0,5 s statt 1 s sequenziell.
+
+# Thread-basiert: concurrent.futures.Future
+# pool.submit(fn) → Future mit .result()
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#future-promise
+
+### Read-Write Lock (Beyond GoF)
+
+**Intent:** A normal lock blocks everyone. A read-write lock distinguishes: any number of readers may access in parallel, one writer locks exclusively. This massively improves throughput when reads dominate – the typical case for caches and configurations.
+
+**Analogy:** A museum: hundreds of visitors view the painting at once. Only when the restorer works is the room completely closed.
+
+**When to use:**
+- Cache/configuration: 95% reads, 5% writes
+- Shared data structures dominated by reads
+- Throughput-critical parallel systems
+
+**Pros:** Parallel readers = high throughput; Writes stay consistent; Ready-made classes in .NET
+
+**Cons:** Writer starvation possible; More complex than a plain lock; Python: the GIL partly reduces the gain
+
+**C# example:**
+```csharp
+public class SettingsCache
+{
+    private readonly ReaderWriterLockSlim _lock = new();
+    private readonly Dictionary<string, string> _data = new();
+
+    public string? Get(string key)
+    {
+        _lock.EnterReadLock();          // viele parallel OK
+        try
+        {
+            return _data.TryGetValue(key, out var v) ? v : null;
+        }
+        finally { _lock.ExitReadLock(); }
+    }
+
+    public void Set(string key, string value)
+    {
+        _lock.EnterWriteLock();         // exklusiv!
+        try { _data[key] = value; }
+        finally { _lock.ExitWriteLock(); }
+    }
+}
+
+var cache = new SettingsCache();
+cache.Set("theme", "dark");
+// 100 Threads können jetzt GLEICHZEITIG lesen:
+Parallel.For(0, 100, _ => cache.Get("theme"));
+Console.WriteLine("Fertig – ohne Lese-Stau.");
+```
+
+**Python example:**
+```python
+import threading
+
+class ReadWriteLock:
+    """Einfacher RW-Lock (Leser bevorzugt)."""
+    def __init__(self):
+        self._readers = 0
+        self._read_lock = threading.Lock()
+        self._write_lock = threading.Lock()
+
+    def acquire_read(self):
+        with self._read_lock:
+            self._readers += 1
+            if self._readers == 1:       # erster Leser
+                self._write_lock.acquire()  # sperrt Schreiber
+
+    def release_read(self):
+        with self._read_lock:
+            self._readers -= 1
+            if self._readers == 0:       # letzter Leser
+                self._write_lock.release()
+
+    def acquire_write(self): self._write_lock.acquire()
+    def release_write(self): self._write_lock.release()
+
+rw = ReadWriteLock()
+cache = {"theme": "dark"}
+
+def read():
+    rw.acquire_read()
+    try: return cache.get("theme")   # parallel möglich
+    finally: rw.release_read()
+
+print(read())
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#read-write-lock
+
+### Double-Checked Locking (Beyond GoF)
+
+**Intent:** For a thread-safe lazy singleton, locking on every access would be wasteful. Double-checked locking first checks without a lock (fast path), locks only in the rare creation case and checks again afterwards. Caution: only correct with a memory barrier (volatile in C#); in practice prefer Lazy<T> or module import in Python.
+
+**Analogy:** Glancing through a shop window: if the shop is obviously empty you never enter (no lock). Only if something might be there do you enter and check thoroughly.
+
+**When to use:**
+- Lazy initialization under high thread load
+- Hot paths where locks measurably slow things down
+- Historically: singleton implementations
+
+**Pros:** Fast path without lock costs; Thread-safe when implemented correctly; Instructive about memory models
+
+**Cons:** Extremely easy to implement incorrectly; volatile/memory barrier strictly required; Modern alternatives are almost always better
+
+**C# example:**
+```csharp
+public sealed class Database
+{
+    // volatile ist hier ESSENZIELL (Memory Barrier):
+    private static volatile Database? _instance;
+    private static readonly object _gate = new();
+
+    public static Database Instance
+    {
+        get
+        {
+            if (_instance == null)            // Check 1: ohne Lock
+            {
+                lock (_gate)
+                {
+                    if (_instance == null)    // Check 2: mit Lock
+                        _instance = new Database();
+                }
+            }
+            return _instance;
+        }
+    }
+    private Database()
+        => Console.WriteLine("DB-Verbindung aufgebaut");
+}
+
+// Praxis-Tipp: Lazy<T> erledigt all das korrekt und lesbar:
+// private static readonly Lazy<Database> _db = new(() => new());
+```
+
+**Python example:**
+```python
+import threading
+
+class Database:
+    _instance = None
+    _lock = threading.Lock()
+
+    def __new__(cls):
+        if cls._instance is None:            # Check 1: ohne Lock
+            with cls._lock:
+                if cls._instance is None:    # Check 2: mit Lock
+                    print("DB-Verbindung aufgebaut")
+                    cls._instance = super().__new__(cls)
+        return cls._instance
+
+# 10 Threads gleichzeitig – Konstruktor läuft genau 1×:
+threads = [threading.Thread(target=Database) for _ in range(10)]
+for t in threads: t.start()
+for t in threads: t.join()
+
+# Pythonischer: Modul-Level-Instanz –
+# Imports sind durch den Import-Lock bereits thread-sicher.
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#double-checked-locking
+
+
+## Architectural & Enterprise / Architektur & Enterprise
+
+Patterns above class level: they structure entire applications and data access layers – from MVC to Event Sourcing (following Martin Fowler et al.).
+
+### MVC (Model-View-Controller) (Beyond GoF)
+
+**Intent:** MVC divides an application into three responsibilities: the model holds data and business logic, the view renders, the controller receives input and orchestrates. UI and logic can thus be developed, tested and swapped independently. ASP.NET MVC and Django (called "MTV" there) build directly on it.
+
+**Analogy:** A restaurant: the kitchen (model) prepares food, the plate (view) presents it, the waiter (controller) takes orders and mediates.
+
+**When to use:**
+- Web applications with clear role separation
+- Multiple views of the same data
+- Teams: developing frontend and backend in parallel
+
+**Pros:** Logic testable without UI; Views swappable (HTML, JSON, PDF); Established – every framework team knows it
+
+**Cons:** Controllers tend to become "fat controllers"; Model/controller boundary often unclear; Overhead for tiny tools
+
+**C# example:**
+```csharp
+// MODEL – Daten + Geschäftslogik:
+public class TodoModel
+{
+    public List<string> Items { get; } = new();
+    public void Add(string item) => Items.Add(item);
+}
+
+// VIEW – nur Darstellung:
+public class TodoView
+{
+    public void Render(IEnumerable<string> items)
+    {
+        Console.WriteLine("=== Meine Aufgaben ===");
+        foreach (var (item, i) in items.Select((x, i) => (x, i)))
+            Console.WriteLine($"{i + 1}. {item}");
+    }
+}
+
+// CONTROLLER – verbindet Eingabe, Model und View:
+public class TodoController(TodoModel model, TodoView view)
+{
+    public void AddTodo(string text)   // "Eingabe"
+    {
+        if (!string.IsNullOrWhiteSpace(text))
+            model.Add(text.Trim());
+        view.Render(model.Items);      // View aktualisieren
+    }
+}
+
+var controller = new TodoController(new TodoModel(), new TodoView());
+controller.AddTodo("Design Patterns lernen");
+controller.AddTodo("Projekt aufsetzen");
+```
+
+**Python example:**
+```python
+# MODEL – Daten + Geschäftslogik:
+class TodoModel:
+    def __init__(self): self.items: list[str] = []
+    def add(self, item: str): self.items.append(item)
+
+# VIEW – nur Darstellung:
+class TodoView:
+    def render(self, items):
+        print("=== Meine Aufgaben ===")
+        for i, item in enumerate(items, start=1):
+            print(f"{i}. {item}")
+
+# CONTROLLER – verbindet Eingabe, Model und View:
+class TodoController:
+    def __init__(self, model: TodoModel, view: TodoView):
+        self.model, self.view = model, view
+
+    def add_todo(self, text: str):      # "Eingabe"
+        if text.strip():
+            self.model.add(text.strip())
+        self.view.render(self.model.items)
+
+controller = TodoController(TodoModel(), TodoView())
+controller.add_todo("Design Patterns lernen")
+controller.add_todo("Projekt aufsetzen")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#mvc
+
+### MVVM (Model-View-ViewModel) (Beyond GoF)
+
+**Intent:** MVVM replaces the controller with a view model: it exposes the view state as bindable properties and commands. The view updates automatically via data binding (observer mechanics!), the view model does not know the view and is therefore fully testable. Standard in WPF, MAUI, Avalonia – and conceptually in Vue/Knockout.
+
+**Analogy:** A shop window with live price tags: if the warehouse (model) changes a price, the tag system (view model) automatically updates the display (view) – nobody runs around with a marker.
+
+**When to use:**
+- XAML-based UIs: WPF, MAUI, Avalonia, WinUI
+- Testing UI logic without a UI framework
+- Complex forms with lots of state
+
+**Pros:** View model fully unit-testable; Automatic UI synchronization; Designers & developers work separately
+
+**Cons:** Binding errors often only visible at runtime; Boilerplate (INotifyPropertyChanged); Oversized for simple UIs
+
+**C# example:**
+```csharp
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+// ViewModel: bindbarer Zustand + Benachrichtigung
+public class LoginViewModel : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    private string _username = "";
+    public string Username
+    {
+        get => _username;
+        set { _username = value; Notify(); Notify(nameof(CanLogin)); }
+    }
+
+    public bool CanLogin => Username.Length >= 3;
+
+    public void Login() =>
+        Console.WriteLine($"Login als {Username} ...");
+
+    private void Notify([CallerMemberName] string? p = null) =>
+        PropertyChanged?.Invoke(this, new(p));
+}
+
+// In XAML bindet die View deklarativ:
+// <TextBox Text="{Binding Username}" />
+// <Button Command="{Binding LoginCommand}"
+//         IsEnabled="{Binding CanLogin}" />
+
+var vm = new LoginViewModel();
+vm.PropertyChanged += (_, e) =>
+    Console.WriteLine($"UI aktualisiert: {e.PropertyName}");
+vm.Username = "anna";   // View würde sich selbst aktualisieren
+```
+
+**Python example:**
+```python
+# MVVM-Kern nachgebaut: beobachtbares ViewModel
+class Observable:
+    def __init__(self):
+        self._subscribers = []
+    def bind(self, callback):
+        self._subscribers.append(callback)
+    def notify(self, prop, value):
+        for cb in self._subscribers:
+            cb(prop, value)
+
+class LoginViewModel(Observable):
+    def __init__(self):
+        super().__init__()
+        self._username = ""
+
+    @property
+    def username(self): return self._username
+
+    @username.setter
+    def username(self, value):
+        self._username = value
+        self.notify("username", value)
+        self.notify("can_login", self.can_login)
+
+    @property
+    def can_login(self): return len(self._username) >= 3
+
+    def login(self): print(f"Login als {self._username} ...")
+
+vm = LoginViewModel()
+# Die "View" bindet sich an das ViewModel:
+vm.bind(lambda prop, val: print(f"UI aktualisiert: {prop}={val}"))
+vm.username = "anna"    # UI reagiert automatisch
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#mvvm
+
+### Repository (Beyond GoF)
+
+**Intent:** The repository mediates between domain and persistence: business logic talks to an interface that feels like an in-memory collection (GetById, Add, Remove) – whether SQL, MongoDB or a file sits behind it is interchangeable. Core of testable architecture: in tests, the real repository is simply replaced by an in-memory one.
+
+**Analogy:** The librarian: you say "I would like book X" – whether it is in the basement, on a shelf or at another branch is her problem, not yours.
+
+**When to use:**
+- Decoupling domain logic from persistence
+- Tests without a real database
+- Keeping the data source swappable (SQL → NoSQL)
+
+**Pros:** Excellent testability; Central place for queries; Clear architectural boundary
+
+**Cons:** Double abstraction over ORMs (EF Core already is one); Generic repositories invite leaky abstractions; More layers = more code
+
+**C# example:**
+```csharp
+public record Product(int Id, string Name, decimal Price);
+
+public interface IProductRepository
+{
+    Product? GetById(int id);
+    IEnumerable<Product> GetAll();
+    void Add(Product product);
+}
+
+// Produktiv: EF Core / Dapper. Im Test: In-Memory!
+public class InMemoryProductRepository : IProductRepository
+{
+    private readonly Dictionary<int, Product> _store = new();
+    public Product? GetById(int id)
+        => _store.TryGetValue(id, out var p) ? p : null;
+    public IEnumerable<Product> GetAll() => _store.Values;
+    public void Add(Product p) => _store[p.Id] = p;
+}
+
+// Geschäftslogik kennt NUR das Interface:
+public class PricingService(IProductRepository repo)
+{
+    public decimal TotalInventoryValue()
+        => repo.GetAll().Sum(p => p.Price);
+}
+
+IProductRepository repo = new InMemoryProductRepository();
+repo.Add(new Product(1, "Laptop", 999m));
+repo.Add(new Product(2, "Maus", 29m));
+Console.WriteLine(new PricingService(repo).TotalInventoryValue());
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+from typing import Protocol
+
+@dataclass
+class Product:
+    id: int
+    name: str
+    price: float
+
+class ProductRepository(Protocol):        # die Schnittstelle
+    def get_by_id(self, id: int) -> Product | None: ...
+    def get_all(self) -> list[Product]: ...
+    def add(self, product: Product) -> None: ...
+
+class InMemoryProductRepository:          # für Tests/Demo
+    def __init__(self): self._store: dict[int, Product] = {}
+    def get_by_id(self, id): return self._store.get(id)
+    def get_all(self): return list(self._store.values())
+    def add(self, p): self._store[p.id] = p
+
+class PricingService:                     # kennt nur das Protokoll
+    def __init__(self, repo: ProductRepository):
+        self._repo = repo
+    def total_inventory_value(self) -> float:
+        return sum(p.price for p in self._repo.get_all())
+
+repo = InMemoryProductRepository()
+repo.add(Product(1, "Laptop", 999.0))
+repo.add(Product(2, "Maus", 29.0))
+print(PricingService(repo).total_inventory_value())   # 1028.0
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#repository
+
+### Unit of Work (Beyond GoF)
+
+**Intent:** A unit of work tracks all object changes during a business operation (new, modified, deleted) and persists them together at the end – atomically: all or nothing. Entity Framework (DbContext.SaveChanges) and SQLAlchemy (Session.commit) implement exactly this pattern.
+
+**Analogy:** The shopping cart: you put everything in and pay once at the checkout – not each item individually at the shelf.
+
+**When to use:**
+- Multiple changes must happen atomically
+- Together with Repository for clean persistence
+- Change tracking across a request
+
+**Pros:** Transactional consistency; Fewer DB round trips (batching); Trivial rollback
+
+**Cons:** ORMs usually ship it already → do not duplicate; Long units hold locks/memory; Error handling centralizes at commit
+
+**C# example:**
+```csharp
+public class UnitOfWork
+{
+    private readonly List<string> _newEntities = new();
+    private readonly List<string> _dirtyEntities = new();
+
+    public void RegisterNew(string e)   => _newEntities.Add(e);
+    public void RegisterDirty(string e) => _dirtyEntities.Add(e);
+
+    public void Commit()   // alles-oder-nichts
+    {
+        Console.WriteLine("BEGIN TRANSACTION");
+        try
+        {
+            foreach (var e in _newEntities)
+                Console.WriteLine($"  INSERT {e}");
+            foreach (var e in _dirtyEntities)
+                Console.WriteLine($"  UPDATE {e}");
+            Console.WriteLine("COMMIT ✓");
+        }
+        catch
+        {
+            Console.WriteLine("ROLLBACK ✗");
+            throw;
+        }
+    }
+}
+
+var uow = new UnitOfWork();
+uow.RegisterNew("Order#1001");
+uow.RegisterDirty("Customer#42 (Punkte +100)");
+uow.Commit();
+// Genau so arbeitet EF Core: ctx.Add(...), ctx.SaveChanges()
+```
+
+**Python example:**
+```python
+class UnitOfWork:
+    def __init__(self):
+        self._new, self._dirty = [], []
+
+    def register_new(self, entity): self._new.append(entity)
+    def register_dirty(self, entity): self._dirty.append(entity)
+
+    # Als Context Manager – pythonisch:
+    def __enter__(self): return self
+
+    def __exit__(self, exc_type, exc, tb):
+        if exc_type is None:
+            print("BEGIN TRANSACTION")
+            for e in self._new:   print(f"  INSERT {e}")
+            for e in self._dirty: print(f"  UPDATE {e}")
+            print("COMMIT ✓")
+        else:
+            print("ROLLBACK ✗")
+        return False
+
+with UnitOfWork() as uow:
+    uow.register_new("Order#1001")
+    uow.register_dirty("Customer#42 (Punkte +100)")
+# Commit passiert automatisch am Block-Ende.
+# Genau so arbeitet SQLAlchemy: session.add(...), session.commit()
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#unit-of-work
+
+### Publish-Subscribe (Beyond GoF)
+
+**Intent:** Pub/sub extends Observer with a broker in the middle: publishers send events to a channel (topic), subscribers register with the channel. Senders and receivers are fully decoupled – in time, place and technology. The backbone of event-driven architectures (Kafka, RabbitMQ, Redis Pub/Sub, MQTT).
+
+**Analogy:** A newspaper subscription: the publisher does not know you personally – it prints. Distribution (the broker) organizes delivery, and you only get the sections you subscribed to.
+
+**When to use:**
+- Microservice communication without direct coupling
+- Distributing events to an unknown number of receivers
+- In-process event buses in modular monoliths
+
+**Pros:** Maximum sender/receiver decoupling; New subscribers without publisher changes; Scales horizontally via brokers
+
+**Cons:** Flow harder to trace (who is listening?); Delivery guarantees get complex; Broker as additional infrastructure
+
+**C# example:**
+```csharp
+// Minimaler In-Process-EventBus:
+public class EventBus
+{
+    private readonly Dictionary<string, List<Action<string>>>
+        _topics = new();
+
+    public void Subscribe(string topic, Action<string> handler)
+    {
+        if (!_topics.ContainsKey(topic))
+            _topics[topic] = new();
+        _topics[topic].Add(handler);
+    }
+
+    public void Publish(string topic, string message)
+    {
+        if (!_topics.TryGetValue(topic, out var subs)) return;
+        foreach (var handler in subs) handler(message);
+    }
+}
+
+var bus = new EventBus();
+
+// Services abonnieren – kennen den Sender NICHT:
+bus.Subscribe("order.created",
+    m => Console.WriteLine($"📧 Mail-Service: {m}"));
+bus.Subscribe("order.created",
+    m => Console.WriteLine($"📦 Lager-Service: {m}"));
+
+// Der Shop published – kennt die Empfänger NICHT:
+bus.Publish("order.created", "Bestellung #1001 eingegangen");
+```
+
+**Python example:**
+```python
+from collections import defaultdict
+from typing import Callable
+
+class EventBus:
+    def __init__(self):
+        self._topics: dict[str, list[Callable]] = defaultdict(list)
+
+    def subscribe(self, topic: str, handler: Callable[[str], None]):
+        self._topics[topic].append(handler)
+
+    def publish(self, topic: str, message: str):
+        for handler in self._topics[topic]:
+            handler(message)
+
+bus = EventBus()
+
+# Services abonnieren – kennen den Sender NICHT:
+bus.subscribe("order.created",
+              lambda m: print(f"📧 Mail-Service: {m}"))
+bus.subscribe("order.created",
+              lambda m: print(f"📦 Lager-Service: {m}"))
+
+# Der Shop published – kennt die Empfänger NICHT:
+bus.publish("order.created", "Bestellung #1001 eingegangen")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#publish-subscribe
+
+### CQRS (Beyond GoF)
+
+**Intent:** Command Query Responsibility Segregation: the write path (commands change state, return nothing) and read path (queries read, change nothing) get separate models – up to separate databases. Read and write load scale independently; read models are tailored exactly to the UI. Often combined with event sourcing and the mediator (MediatR).
+
+**Analogy:** A kitchen with a menu: orders (commands) go into the kitchen, the menu (query model) is a pre-prepared view – nobody reads the kitchen inventory to know what is available.
+
+**When to use:**
+- Very different read/write loads
+- Complex domains with simple display requirements
+- Together with event sourcing and messaging
+
+**Pros:** Independent scaling of both paths; Lean, UI-precise read models; Clearer intent in code (command vs. query)
+
+**Cons:** Eventual consistency between models; Significantly more infrastructure; Massively oversized for CRUD apps
+
+**C# example:**
+```csharp
+// WRITE-Seite: Commands ändern – geben nichts zurück
+public record CreateOrderCommand(string Product, int Qty);
+
+public class OrderCommandHandler
+{
+    public void Handle(CreateOrderCommand cmd)
+    {
+        Console.WriteLine($"Validiere & speichere: " +
+            $"{cmd.Qty}x {cmd.Product}");
+        // → Event ans Lesemodell publizieren
+        ReadModel.Project(cmd.Product, cmd.Qty);
+    }
+}
+
+// READ-Seite: eigenes, flaches Modell nur fürs Anzeigen
+public static class ReadModel
+{
+    private static readonly List<string> _orderList = new();
+    public static void Project(string product, int qty)
+        => _orderList.Add($"{qty}x {product}");
+    public static IReadOnlyList<string> GetOrderList()
+        => _orderList;   // Query: liest nur!
+}
+
+new OrderCommandHandler()
+    .Handle(new CreateOrderCommand("Laptop", 2));
+
+foreach (var row in ReadModel.GetOrderList())
+    Console.WriteLine($"UI zeigt: {row}");
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+
+# WRITE-Seite: Commands ändern – geben nichts zurück
+@dataclass
+class CreateOrderCommand:
+    product: str
+    qty: int
+
+class OrderCommandHandler:
+    def __init__(self, read_model):
+        self._read_model = read_model
+
+    def handle(self, cmd: CreateOrderCommand):
+        print(f"Validiere & speichere: {cmd.qty}x {cmd.product}")
+        self._read_model.project(cmd.product, cmd.qty)
+
+# READ-Seite: flaches Modell nur fürs Anzeigen
+class OrderReadModel:
+    def __init__(self): self._rows: list[str] = []
+    def project(self, product, qty):
+        self._rows.append(f"{qty}x {product}")
+    def get_order_list(self) -> list[str]:
+        return list(self._rows)      # Query: liest nur!
+
+read_model = OrderReadModel()
+handler = OrderCommandHandler(read_model)
+handler.handle(CreateOrderCommand("Laptop", 2))
+
+for row in read_model.get_order_list():
+    print(f"UI zeigt: {row}")
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#cqrs
+
+### Event Sourcing (Beyond GoF)
+
+**Intent:** Instead of "balance = €150", event sourcing stores the history: opened, +200, −50. State is reconstructed by replaying events. This yields a perfect audit log, time travel ("state as of yesterday?") and new analyses on old data. Price: higher complexity, event versioning, usually combined with CQRS and snapshots.
+
+**Analogy:** A bank statement: the bank stores every transaction, not just the final balance – and can prove any historical balance exactly.
+
+**When to use:**
+- Audit requirements: finance, medicine, contracts
+- Traceability of every state change
+- Event-driven microservice landscapes
+
+**Pros:** Complete, immutable history; Debugging: state of any moment reproducible; New projections possible retroactively
+
+**Cons:** Significantly more complex than CRUD; Event schema evolution is demanding; Replaying large streams needs snapshots
+
+**C# example:**
+```csharp
+public abstract record AccountEvent(DateTime At);
+public record Opened(DateTime At) : AccountEvent(At);
+public record Deposited(DateTime At, decimal Amount) : AccountEvent(At);
+public record Withdrawn(DateTime At, decimal Amount) : AccountEvent(At);
+
+public class BankAccount
+{
+    private readonly List<AccountEvent> _events = new();
+    public decimal Balance { get; private set; }
+
+    public void Apply(AccountEvent e)
+    {
+        Balance += e switch
+        {
+            Deposited d => d.Amount,
+            Withdrawn w => -w.Amount,
+            _ => 0
+        };
+        _events.Add(e);       // Event anhängen – nie ändern!
+    }
+
+    // Zustand aus der Historie rekonstruieren:
+    public static BankAccount Replay(IEnumerable<AccountEvent> log)
+    {
+        var acc = new BankAccount();
+        foreach (var e in log) acc.Apply(e);
+        return acc;
+    }
+}
+
+var acc = new BankAccount();
+acc.Apply(new Opened(DateTime.Now));
+acc.Apply(new Deposited(DateTime.Now, 200));
+acc.Apply(new Withdrawn(DateTime.Now, 50));
+Console.WriteLine(acc.Balance);   // 150 – aus Events berechnet
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Deposited:  amount: float
+@dataclass(frozen=True)
+class Withdrawn:  amount: float
+
+class BankAccount:
+    def __init__(self):
+        self.events = []        # die einzige Wahrheit!
+        self.balance = 0.0
+
+    def apply(self, event):
+        if isinstance(event, Deposited):
+            self.balance += event.amount
+        elif isinstance(event, Withdrawn):
+            self.balance -= event.amount
+        self.events.append(event)   # anhängen – nie ändern!
+
+    @classmethod
+    def replay(cls, event_log):     # Zustand rekonstruieren
+        acc = cls()
+        for e in event_log:
+            acc.apply(e)
+        return acc
+
+acc = BankAccount()
+acc.apply(Deposited(200))
+acc.apply(Withdrawn(50))
+print(acc.balance)                     # 150.0
+
+restored = BankAccount.replay(acc.events)
+print(restored.balance)                # 150.0 – aus der Historie
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#event-sourcing
+
+
+## Resilience & Cloud / Resilienz & Cloud
+
+Modern patterns for distributed systems and microservices: how does a system stay stable when networks fail and services throw errors?
+
+### Retry (mit Backoff) (Beyond GoF)
+
+**Intent:** Networks have transient faults: brief outages, timeouts, overloaded services. Retry attempts the call again – ideally with exponential backoff (1s, 2s, 4s …) plus random jitter so all clients do not return simultaneously. Important: only retry transient errors and idempotent operations! In .NET Polly handles this, in Python e.g. tenacity.
+
+**Analogy:** A busy phone line: you hang up, wait a bit and dial again – but a little longer with each attempt, instead of hammering redial nonstop.
+
+**When to use:**
+- Transient network/API errors (HTTP 503, timeout)
+- Cloud services with brief hiccups
+- Queue/database connection setup
+
+**Pros:** Bridges brief outages invisibly; Network-friendly with backoff+jitter; Declaratively usable as a library
+
+**Cons:** Worsens overload without backoff; Dangerous for non-idempotent actions; Increases latency in failure cases
+
+**C# example:**
+```csharp
+// Retry mit exponentiellem Backoff + Jitter:
+async Task<T> RetryAsync<T>(Func<Task<T>> action,
+                            int maxAttempts = 4)
+{
+    var rnd = new Random();
+    for (int attempt = 1; ; attempt++)
+    {
+        try
+        {
+            return await action();
+        }
+        catch (HttpRequestException ex)
+            when (attempt < maxAttempts)   // nur transiente Fehler!
+        {
+            var delay = TimeSpan.FromSeconds(
+                Math.Pow(2, attempt - 1))          // 1s, 2s, 4s
+                + TimeSpan.FromMilliseconds(rnd.Next(250));
+            Console.WriteLine(
+                $"Versuch {attempt} scheiterte ({ex.Message}). " +
+                $"Warte {delay.TotalSeconds:F1}s ...");
+            await Task.Delay(delay);
+        }
+    }
+}
+
+var result = await RetryAsync(() =>
+    new HttpClient().GetStringAsync("https://api.example.com"));
+// Produktionsreif: Polly –
+// Policy.Handle<HttpRequestException>().WaitAndRetryAsync(...)
+```
+
+**Python example:**
+```python
+import random, time
+
+def retry(max_attempts=4, base_delay=1.0):
+    """Decorator: Retry mit exponentiellem Backoff + Jitter."""
+    def wrapper(fn):
+        def inner(*args, **kwargs):
+            for attempt in range(1, max_attempts + 1):
+                try:
+                    return fn(*args, **kwargs)
+                except ConnectionError as ex:
+                    if attempt == max_attempts:
+                        raise                    # aufgeben
+                    delay = base_delay * 2 ** (attempt - 1)
+                    delay += random.uniform(0, 0.25)   # Jitter
+                    print(f"Versuch {attempt} scheiterte ({ex}). "
+                          f"Warte {delay:.1f}s ...")
+                    time.sleep(delay)
+        return inner
+    return wrapper
+
+@retry(max_attempts=4)
+def fetch_data():
+    ...  # API-Aufruf, der scheitern kann
+
+# Produktionsreif: tenacity –
+# @retry(wait=wait_exponential(), stop=stop_after_attempt(4))
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#retry
+
+### Circuit Breaker (Beyond GoF)
+
+**Intent:** When a service is persistently down, constant retrying makes everything worse. The circuit breaker counts failures and flips to OPEN when exceeded: calls fail immediately (fail fast), the sick service gets rest. After a cool-down, HALF-OPEN cautiously tests recovery – then back to CLOSED. A pattern from Michael Nygard’s "Release It!", now standard in every microservice architecture.
+
+**Analogy:** The fuse in your house: on overload it trips and cuts the circuit before the wiring burns. Only after checking do you switch it back on.
+
+**When to use:**
+- Protection from cascading failures in microservices
+- External APIs with outage risk
+- Together with Retry: retry first, then breaker
+
+**Pros:** Fail fast instead of timeout pileups; Sick services can recover; System-wide cascades are prevented
+
+**Cons:** Choosing thresholds correctly is hard; Extra state per dependency; Fallback logic is still needed
+
+**C# example:**
+```csharp
+public class CircuitBreaker(int threshold = 3,
+                             int coolDownSeconds = 10)
+{
+    private int _failures;
+    private DateTime _openedAt;
+    public string State { get; private set; } = "GESCHLOSSEN";
+
+    public T Call<T>(Func<T> action, Func<T> fallback)
+    {
+        if (State == "OFFEN")
+        {
+            if (DateTime.Now - _openedAt
+                < TimeSpan.FromSeconds(coolDownSeconds))
+                return fallback();          // sofort abweisen
+            State = "HALB-OFFEN";           // vorsichtig testen
+        }
+        try
+        {
+            var result = action();
+            _failures = 0; State = "GESCHLOSSEN";
+            return result;
+        }
+        catch
+        {
+            _failures++;
+            if (_failures >= threshold || State == "HALB-OFFEN")
+            {
+                State = "OFFEN"; _openedAt = DateTime.Now;
+                Console.WriteLine("⚡ Sicherung ausgelöst!");
+            }
+            return fallback();
+        }
+    }
+}
+
+var breaker = new CircuitBreaker();
+for (int i = 0; i < 5; i++)
+    breaker.Call<string>(
+        () => throw new Exception("Service down"),
+        () => "Fallback: gecachte Daten");
+Console.WriteLine(breaker.State);   // OFFEN
+```
+
+**Python example:**
+```python
+import time
+
+class CircuitBreaker:
+    def __init__(self, threshold=3, cool_down=10.0):
+        self.threshold, self.cool_down = threshold, cool_down
+        self.failures, self.opened_at = 0, 0.0
+        self.state = "GESCHLOSSEN"
+
+    def call(self, action, fallback):
+        if self.state == "OFFEN":
+            if time.time() - self.opened_at < self.cool_down:
+                return fallback()        # sofort abweisen
+            self.state = "HALB-OFFEN"    # vorsichtig testen
+        try:
+            result = action()
+            self.failures, self.state = 0, "GESCHLOSSEN"
+            return result
+        except Exception:
+            self.failures += 1
+            if (self.failures >= self.threshold
+                    or self.state == "HALB-OFFEN"):
+                self.state = "OFFEN"
+                self.opened_at = time.time()
+                print("⚡ Sicherung ausgelöst!")
+            return fallback()
+
+def broken_service():
+    raise ConnectionError("Service down")
+
+breaker = CircuitBreaker()
+for _ in range(5):
+    breaker.call(broken_service, lambda: "Fallback: Cache")
+print(breaker.state)   # OFFEN
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#circuit-breaker
+
+### Saga (Beyond GoF)
+
+**Intent:** Across multiple microservices there is no classic transaction. A saga splits the business operation into local steps (payment, inventory, shipping); if one fails, the already successful steps are undone via compensating actions (refund money, release reservation). Two variants: orchestration (central coordinator) and choreography (events).
+
+**Analogy:** Booking a trip: flight booked, hotel booked – rental car unavailable? Then flight and hotel simply get cancelled again. Every step has its own "cancellation".
+
+**When to use:**
+- Business operations across multiple services/databases
+- Order processes: payment + inventory + shipping
+- Wherever two-phase commit is impractical
+
+**Pros:** Consistency without distributed locks; Each service stays autonomous; Failure paths explicitly modeled
+
+**Cons:** Compensations must exist in the domain; Eventual consistency for intermediate states; Debugging distributed flows is demanding
+
+**C# example:**
+```csharp
+public record SagaStep(string Name, Func<bool> Execute,
+                       Action Compensate);
+
+public class OrderSaga
+{
+    private readonly List<SagaStep> _steps = new();
+    public OrderSaga AddStep(SagaStep s)
+    { _steps.Add(s); return this; }
+
+    public bool Run()
+    {
+        var done = new Stack<SagaStep>();
+        foreach (var step in _steps)
+        {
+            Console.WriteLine($"→ {step.Name}");
+            if (!step.Execute())
+            {
+                Console.WriteLine($"✗ {step.Name} fehlgeschlagen!");
+                while (done.Count > 0)          // Kompensation
+                {
+                    var s = done.Pop();
+                    Console.WriteLine($"↩ Storniere: {s.Name}");
+                    s.Compensate();
+                }
+                return false;
+            }
+            done.Push(step);
+        }
+        return true;
+    }
+}
+
+new OrderSaga()
+    .AddStep(new("Zahlung einziehen",
+        () => true,  () => Console.WriteLine("  Geld erstattet")))
+    .AddStep(new("Lager reservieren",
+        () => true,  () => Console.WriteLine("  Reserv. gelöst")))
+    .AddStep(new("Versand beauftragen",
+        () => false, () => { }))       // scheitert!
+    .Run();
+```
+
+**Python example:**
+```python
+from dataclasses import dataclass
+from typing import Callable
+
+@dataclass
+class SagaStep:
+    name: str
+    execute: Callable[[], bool]
+    compensate: Callable[[], None]
+
+class OrderSaga:
+    def __init__(self):
+        self._steps: list[SagaStep] = []
+
+    def add_step(self, step: SagaStep):
+        self._steps.append(step); return self
+
+    def run(self) -> bool:
+        done: list[SagaStep] = []
+        for step in self._steps:
+            print(f"→ {step.name}")
+            if not step.execute():
+                print(f"✗ {step.name} fehlgeschlagen!")
+                for s in reversed(done):    # Kompensation
+                    print(f"↩ Storniere: {s.name}")
+                    s.compensate()
+                return False
+            done.append(step)
+        return True
+
+(OrderSaga()
+ .add_step(SagaStep("Zahlung einziehen",
+     lambda: True, lambda: print("  Geld erstattet")))
+ .add_step(SagaStep("Lager reservieren",
+     lambda: True, lambda: print("  Reserv. gelöst")))
+ .add_step(SagaStep("Versand beauftragen",
+     lambda: False, lambda: None))      # scheitert!
+ .run())
+```
+
+Direct link: https://apps.totalcreations.de/DesignPatterns/#saga
+

@@ -1,0 +1,33 @@
+# robots.txt für apps.totalcreations.de
+# Muss im DOMAIN-ROOT liegen: https://apps.totalcreations.de/robots.txt
+# WICHTIG: aktuell liefert diese URL einen 500-Fehler – das blockiert Google komplett!
+
+User-agent: *
+Allow: /
+
+# KI-Crawler explizit erlauben (LLM-/GEO-Sichtbarkeit: ChatGPT, Claude, Perplexity, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://apps.totalcreations.de/DesignPatterns/sitemap.xml
